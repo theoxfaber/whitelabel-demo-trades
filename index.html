@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fernhill Roofing &amp; Repairs (Demo build, fictional business)</title>
+<meta name="description" content="Demo build of a UK roofing company homepage. Fictional business, built to show responsive, accessible static HTML/CSS.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M2 16 16 4l14 12h-4v12H6V16z' fill='%23c2410c'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="demo-bar" role="note">
+  <strong>Demo build, fictional business.</strong> Fernhill Roofing does not exist. Names, numbers, reviews and addresses are placeholders. The form does not send anything.
+</div>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top" aria-label="Fernhill Roofing home">
+      <svg width="34" height="34" viewBox="0 0 32 32" aria-hidden="true"><path d="M2 16 16 4l14 12h-4v12H6V16z" fill="currentColor"/><path d="M13 28v-8h6v8" fill="#fff"/></svg>
+      <span>Fernhill <em>Roofing</em></span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+      <span class="sr-only">Menu</span><span class="bars" aria-hidden="true"></span>
+    </button>
+    <nav id="site-nav" class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#process">How it works</a></li>
+        <li><a href="#areas">Areas</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a class="btn btn-small" href="#quote">Get a quote</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Roofing &amp; repairs · Example county, UK</p>
+        <h1>Leaks fixed fast. Roofs built to last the next storm.</h1>
+        <p class="lede">Repairs, re-roofs, flat roofs and guttering for homes and small commercial buildings. Written fixed-price quotes, photos of every job, and a tidy site when we leave.</p>
+        <div class="hero-cta">
+          <a class="btn" href="#quote">Get a free quote</a>
+          <a class="btn btn-ghost" href="tel:+440000000000">Call 0000 000 0000</a>
+        </div>
+        <ul class="trust" aria-label="Why customers choose us (placeholder claims)">
+          <li>Same-week repair visits</li>
+          <li>Fixed written quotes</li>
+          <li>Photo report on every job</li>
+        </ul>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 480 400" role="img">
+          <defs>
+            <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fde7d6"/><stop offset="1" stop-color="#fff7ef"/></linearGradient>
+            <pattern id="tiles" width="28" height="16" patternUnits="userSpaceOnUse"><rect width="28" height="16" fill="#9a3412"/><path d="M0 15.5h28M14 0v8M0 8h28M7 8v8M21 8v8" stroke="#7c2d12" stroke-width="1.5"/></pattern>
+          </defs>
+          <rect width="480" height="400" rx="24" fill="url(#sky)"/>
+          <circle cx="390" cy="80" r="34" fill="#fdba74"/>
+          <path d="M60 210 240 80l180 130z" fill="url(#tiles)"/>
+          <rect x="90" y="208" width="300" height="150" fill="#f5efe6"/>
+          <rect x="300" y="110" width="30" height="60" fill="#57534e"/>
+          <rect x="130" y="240" width="60" height="50" rx="4" fill="#1e3a5f"/>
+          <rect x="290" y="240" width="60" height="50" rx="4" fill="#1e3a5f"/>
+          <rect x="210" y="280" width="60" height="78" rx="4" fill="#c2410c"/>
+          <rect x="60" y="356" width="360" height="6" rx="3" fill="#a8a29e"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="services" aria-labelledby="services-h">
+    <div class="wrap">
+      <h2 id="services-h">What we do</h2>
+      <p class="section-intro">One team for the whole roof, from a slipped tile to a full strip-and-replace.</p>
+      <div class="cards">
+        <article class="card">
+          <h3>Roof repairs</h3>
+          <p>Slipped or broken tiles, leaks, ridge and valley work, storm damage. Most repairs done in one visit.</p>
+        </article>
+        <article class="card">
+          <h3>Re-roofing</h3>
+          <p>Full strip and replace in slate or tile, with new membrane and battens and all waste removed.</p>
+        </article>
+        <article class="card">
+          <h3>Flat roofs</h3>
+          <p>EPDM rubber and GRP fibreglass for extensions, garages and dormers.</p>
+        </article>
+        <article class="card">
+          <h3>Guttering &amp; fascias</h3>
+          <p>Clearing, repairs and uPVC replacement, so rainwater goes where it should.</p>
+        </article>
+        <article class="card">
+          <h3>Chimneys &amp; leadwork</h3>
+          <p>Repointing, flashing, lead valleys and chimney removal.</p>
+        </article>
+        <article class="card">
+          <h3>Roof inspections</h3>
+          <p>Photo report for buyers, landlords and insurers, with a clear list of what needs doing and what can wait.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="process" aria-labelledby="process-h">
+    <div class="wrap">
+      <h2 id="process-h">How it works</h2>
+      <ol class="steps">
+        <li><span class="num" aria-hidden="true">1</span><h3>Tell us the problem</h3><p>Use the form or call. Photos help us quote faster.</p></li>
+        <li><span class="num" aria-hidden="true">2</span><h3>Survey &amp; fixed quote</h3><p>We inspect, photograph and send a written price within 48 hours.</p></li>
+        <li><span class="num" aria-hidden="true">3</span><h3>The work</h3><p>Booked at a time that suits you. We protect the garden and clear up daily.</p></li>
+        <li><span class="num" aria-hidden="true">4</span><h3>Sign-off</h3><p>Before-and-after photos and the guarantee paperwork, in your inbox.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="reviews-h">
+    <div class="wrap">
+      <h2 id="reviews-h">Example review layout</h2>
+      <p class="section-intro">Placeholder text showing where real customer reviews would go. These are not real reviews.</p>
+      <div class="quotes">
+        <figure class="quote"><blockquote><p>“Placeholder review: a short customer quote about a repair, the communication and the clean-up.”</p></blockquote><figcaption>Customer name, Town (placeholder)</figcaption></figure>
+        <figure class="quote"><blockquote><p>“Placeholder review: a short customer quote about a re-roof finished on time and on budget.”</p></blockquote><figcaption>Customer name, Town (placeholder)</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="areas" aria-labelledby="areas-h">
+    <div class="wrap two-col">
+      <div>
+        <h2 id="areas-h">Areas we cover</h2>
+        <p>Based in an example market town, covering about 20 miles around it. Not sure if you're in range? Put your postcode in the form and we'll tell you.</p>
+      </div>
+      <ul class="areas">
+        <li>Town A</li><li>Town B</li><li>Town C</li><li>Village D</li><li>Village E</li><li>Town F</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="quote" aria-labelledby="quote-h">
+    <div class="wrap two-col">
+      <div>
+        <h2 id="quote-h">Get a free quote</h2>
+        <p>Tell us what's going on and we'll reply within one working day. (Demo: the form checks your input in the browser and does not send anything.)</p>
+        <ul class="ticks">
+          <li>No call centre, you talk to the roofer</li>
+          <li>Fixed written prices</li>
+          <li>Emergency tarping available</li>
+        </ul>
+      </div>
+      <form class="form" id="quote-form" novalidate>
+        <div class="field">
+          <label for="name">Your name</label>
+          <input id="name" name="name" type="text" autocomplete="name" required aria-describedby="name-err">
+          <p class="err" id="name-err" aria-live="polite"></p>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required aria-describedby="phone-err">
+            <p class="err" id="phone-err" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="postcode">Postcode</label>
+            <input id="postcode" name="postcode" type="text" autocomplete="postal-code" required aria-describedby="postcode-err">
+            <p class="err" id="postcode-err" aria-live="polite"></p>
+          </div>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-err">
+          <p class="err" id="email-err" aria-live="polite"></p>
+        </div>
+        <div class="field">
+          <label for="service">What do you need?</label>
+          <select id="service" name="service" required aria-describedby="service-err">
+            <option value="">Choose one</option>
+            <option>Roof repair / leak</option>
+            <option>Re-roof</option>
+            <option>Flat roof</option>
+            <option>Guttering &amp; fascias</option>
+            <option>Chimney / leadwork</option>
+            <option>Inspection</option>
+          </select>
+          <p class="err" id="service-err" aria-live="polite"></p>
+        </div>
+        <div class="field">
+          <label for="message">Details <span class="opt">(optional)</span></label>
+          <textarea id="message" name="message" rows="4"></textarea>
+        </div>
+        <button class="btn btn-block" type="submit">Request my quote</button>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  <section class="section alt" id="faq" aria-labelledby="faq-h">
+    <div class="wrap narrow">
+      <h2 id="faq-h">Questions</h2>
+      <details><summary>How quickly can you come out?</summary><p>Placeholder answer: repair visits are usually booked within the week; emergency tarping can be same day.</p></details>
+      <details><summary>Do you give fixed prices?</summary><p>Placeholder answer: yes, every quote is written and fixed unless hidden damage is found, which we photograph and agree with you first.</p></details>
+      <details><summary>Is the work guaranteed?</summary><p>Placeholder answer: a real business would state its own guarantee terms here.</p></details>
+      <details><summary>Do I need to be home?</summary><p>Placeholder answer: not for most external work, as long as we have access to the property.</p></details>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <p class="brand-foot">Fernhill Roofing &amp; Repairs</p>
+      <p>Fictional business for a demo build. No real company, address, phone number or registration is implied.</p>
+    </div>
+    <div>
+      <p><strong>Demo build</strong> by Shanmukh Kiran Sagar, static HTML/CSS.</p>
+      <p><a href="https://github.com/theoxfaber/whitelabel-demo-trades">Source on GitHub</a></p>
+    </div>
+  </div>
+</footer>
+
+<a class="mobile-cta btn" href="#quote">Get a free quote</a>
+<script src="main.js" defer></script>
+</body>
+</html>
