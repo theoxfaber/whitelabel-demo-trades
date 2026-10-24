@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>The Home Bakery · 21 Francis Street, Wick (concept)</title>
+<meta name="description" content="Unofficial website concept for The Home Bakery, Wick, Caithness.">
+<meta name="theme-color" content="#10325A">
+<link rel="preload" as="font" type="font/woff2" href="fonts/BigShoulders-500-900.woff2" crossorigin>
+<style>
+@font-face{font-family:"Big Shoulders";font-weight:500 900;font-display:swap;src:url(fonts/BigShoulders-500-900.woff2) format("woff2")}
+@font-face{font-family:"Figtree";font-weight:400 700;font-display:swap;src:url(fonts/Figtree-400-700.woff2) format("woff2")}
+:root{
+  --fascia:#10325A; --fascia-2:#173F6E; --board:#0A1828; --flap:#13253A; --flap-2:#0F1F31;
+  --render:#F2F5F8; --white:#fff; --line:#D5DDE6; --ink:#0D1B2A; --muted:#4A5B6D; --on-dark:#C9D6E4;
+  --red:#E4442E; --red-ink:#B8301C;
+  --sign:"Big Shoulders",Impact,"Arial Narrow",sans-serif; --text:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --pad:clamp(1.1rem,4.2vw,3.5rem); --ease:cubic-bezier(.22,1,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{font-family:var(--text);font-size:clamp(1rem,.96rem + .22vw,1.14rem);line-height:1.6;color:var(--ink);background:var(--render);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+.wrap{width:min(1320px,100% - 2*var(--pad));margin-inline:auto}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ribbon */
+.ribbon{background:var(--board);color:var(--on-dark);font-size:.8rem;text-align:center;padding:.5rem var(--pad);line-height:1.4}
+.ribbon b{color:#fff;font-weight:600}
+
+/* fascia header: the shop sign */
+.fascia{background:var(--fascia);color:#fff;border-bottom:6px solid var(--board);position:relative}
+.fascia .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:76px}
+.mark{display:flex;align-items:baseline;gap:.7rem;text-decoration:none}
+.mark b{font-family:var(--sign);font-weight:800;font-size:clamp(1.55rem,1.1rem + 1.6vw,2.3rem);letter-spacing:.06em;text-transform:uppercase;line-height:1}
+.mark span{font-family:var(--sign);font-weight:600;font-size:1rem;letter-spacing:.32em;color:#9DB5D0;text-transform:uppercase}
+.nav{display:flex;align-items:center;gap:clamp(1rem,2.2vw,2.2rem)}
+.nav a{font-weight:600;font-size:.95rem;text-decoration:none;color:#DCE6F1}
+.nav a:hover{color:#fff;text-decoration:underline;text-underline-offset:5px}
+.call{display:inline-flex;align-items:center;gap:.55rem;background:var(--red);color:#fff;text-decoration:none;font-weight:700;padding:.7rem 1.05rem;border-radius:3px;white-space:nowrap}
+.call:hover{background:var(--red-ink)}
+.call svg{width:18px;height:18px}
+@media (max-width:880px){.nav a.l{display:none}}
+@media (max-width:420px){.flap{font-size:1.06rem;letter-spacing:.03em}.flap .h,.flap .leaf,.flap .leaf2{padding:0 .6rem}.row{grid-template-columns:3.6rem minmax(0,1fr)}}
+@media (max-width:520px){.mark span{display:none}.fascia .call{padding:.6rem .8rem;font-size:.9rem}.fascia .call .t{display:none}}
+
+/* hero */
+.hero{background:var(--render);padding:clamp(2.2rem,5vw,4.5rem) 0 clamp(2.5rem,6vw,5rem);position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,5.4fr) minmax(0,6.6fr);gap:clamp(2rem,4.5vw,4.5rem);align-items:center}
+.status{display:inline-flex;align-items:center;gap:.55rem;font-weight:600;font-size:.92rem;color:var(--ink);border:1.5px solid var(--line);background:#fff;padding:.4rem .75rem;border-radius:3px}
+.status i{width:9px;height:9px;border-radius:50%;background:#9AA8B6;flex:none}
+.status.open i{background:#1E9E5A;box-shadow:0 0 0 4px rgba(30,158,90,.16)}
+h1{font-family:var(--sign);font-weight:800;text-transform:uppercase;line-height:.92;letter-spacing:.005em;font-size:clamp(2.7rem,1.5rem + 4.6vw,5.6rem);margin:1.1rem 0 1.1rem;color:var(--fascia);text-wrap:balance}
+.lede{max-width:34ch;color:var(--muted);font-size:clamp(1.05rem,1rem + .35vw,1.28rem)}
+.ctas{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.7rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font-weight:700;text-decoration:none;padding:.95rem 1.3rem;border-radius:3px;border:2px solid var(--fascia);min-height:52px}
+.btn.solid{background:var(--fascia);color:#fff}
+.btn.solid:hover{background:var(--fascia-2)}
+.btn.ghost{color:var(--fascia);background:transparent}
+.btn.ghost:hover{background:#fff}
+
+/* the board (signature) */
+.board{background:var(--board);border-radius:10px;padding:clamp(1rem,2.2vw,1.6rem);box-shadow:0 30px 60px -30px rgba(10,24,40,.55),inset 0 0 0 1px rgba(255,255,255,.05);position:relative}
+.board-top{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;color:#8EA4BC;font-family:var(--sign);font-weight:600;letter-spacing:.18em;text-transform:uppercase;font-size:.95rem;padding:0 .2rem .9rem;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:.9rem}
+.board-top b{color:#fff;font-weight:800;letter-spacing:.14em}
+.row{display:grid;grid-template-columns:clamp(4.6rem,9vw,7.2rem) minmax(0,1fr);gap:.6rem;align-items:stretch}
+.row+.row{margin-top:.55rem}
+.lbl{font-family:var(--sign);font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#7F96AF;font-size:clamp(.82rem,.7rem + .4vw,1.05rem);display:flex;align-items:center}
+.flap{position:relative;height:clamp(3rem,2.3rem + 2.6vw,4.4rem);perspective:900px;font-family:var(--sign);font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:#F6F9FC;font-size:clamp(1.2rem,.8rem + 1.9vw,2.35rem)}
+.flap .h{position:absolute;left:0;right:0;height:50%;overflow:hidden;background:var(--flap);display:flex;justify-content:flex-start;padding:0 .8rem}
+.flap .h span{display:block;line-height:clamp(3rem,2.3rem + 2.6vw,4.4rem);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+.flap .top{top:0;border-radius:5px 5px 0 0;align-items:flex-start}
+.flap .bot{bottom:0;border-radius:0 0 5px 5px;align-items:flex-end;background:var(--flap-2)}
+.flap::after{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:rgba(0,0,0,.6);box-shadow:0 1px 0 rgba(255,255,255,.04);z-index:3}
+.flap .leaf{position:absolute;left:0;right:0;top:0;height:50%;background:var(--flap);border-radius:5px 5px 0 0;overflow:hidden;transform-origin:50% 100%;z-index:2;padding:0 .8rem;backface-visibility:hidden}
+.flap .leaf span{display:block;line-height:clamp(3rem,2.3rem + 2.6vw,4.4rem);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.flap .leaf.go{animation:fold .52s var(--ease) forwards}
+@keyframes fold{0%{transform:rotateX(0);filter:brightness(1)}100%{transform:rotateX(-90deg);filter:brightness(.55)}}
+.flap .leaf2{position:absolute;left:0;right:0;bottom:0;height:50%;background:var(--flap-2);border-radius:0 0 5px 5px;overflow:hidden;transform-origin:50% 0;transform:rotateX(90deg);z-index:2;padding:0 .8rem}
+.flap .leaf2 span{display:block;line-height:clamp(3rem,2.3rem + 2.6vw,4.4rem);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;position:relative;top:-100%}
+.flap .leaf2.go{animation:unfold .42s .44s var(--ease) forwards}
+@keyframes unfold{0%{transform:rotateX(90deg)}100%{transform:rotateX(0)}}
+.board-foot{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-top:1rem;padding-top:.85rem;border-top:1px solid rgba(255,255,255,.08);color:#8EA4BC;font-size:.85rem}
+.board-foot a{color:#fff;font-weight:600}
+@media (max-width:960px){.hero .wrap{grid-template-columns:1fr;gap:1.4rem}.hero .intro{display:contents}.hero .status{justify-self:start;order:1}.hero h1{order:2;margin:0}.hero .board{order:3}.hero .lede{order:4;max-width:44ch}.hero .ctas{order:5;margin-top:0}}
+
+/* counter (full list) */
+.counter{background:#fff;padding:clamp(3.5rem,8vw,7rem) 0;border-top:1px solid var(--line)}
+.sec-h{display:flex;justify-content:space-between;align-items:end;gap:2rem;flex-wrap:wrap;margin-bottom:clamp(1.6rem,3vw,2.6rem)}
+h2{font-family:var(--sign);font-weight:800;text-transform:uppercase;line-height:.95;color:var(--fascia);font-size:clamp(2.2rem,1.4rem + 3.4vw,4.4rem);text-wrap:balance}
+.sec-h p{max-width:42ch;color:var(--muted)}
+.tabs{display:flex;flex-wrap:wrap;gap:0;border:2px solid var(--fascia);border-radius:4px;overflow:hidden;width:max-content;max-width:100%}
+.tabs button{background:#fff;border:0;border-right:2px solid var(--fascia);padding:.7rem 1.05rem;font-weight:700;cursor:pointer;color:var(--fascia);font-size:.95rem}
+.tabs button:last-child{border-right:0}
+.tabs button[aria-selected=true]{background:var(--fascia);color:#fff}
+@media (max-width:640px){.tabs{width:100%;display:grid;grid-template-columns:1fr 1fr}.tabs button{border-right:0;border-bottom:2px solid var(--fascia)}.tabs button:nth-child(odd){border-right:2px solid var(--fascia)}.tabs button:nth-last-child(-n+1){border-bottom:0}.tabs button:nth-child(5){grid-column:1/-1;border-right:0}}
+.tray{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(1.5rem,4vw,4rem);margin-top:clamp(1.5rem,3vw,2.4rem);align-items:start}
+.tray figure{position:relative;border-radius:6px;overflow:hidden;aspect-ratio:4/3;background:#dfe6ee}
+.tray figure img{width:100%;height:100%;object-fit:cover}
+.tray figcaption{position:absolute;left:0;bottom:0;background:var(--board);color:#fff;font-family:var(--sign);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:.95rem;padding:.55rem .85rem;border-top-right-radius:4px}
+.list{columns:2 15rem;column-gap:2.5rem;list-style:none}
+.list li{break-inside:avoid;display:flex;gap:.8rem;align-items:baseline;padding:.62rem 0;border-bottom:1px solid var(--line);font-weight:600;font-size:1.04rem}
+.list li small{margin-left:auto;font-weight:600;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--red-ink);white-space:nowrap}
+.panel[hidden]{display:none}
+.note{margin-top:1.4rem;color:var(--muted);font-size:.92rem;max-width:60ch}
+@media (max-width:900px){.tray{grid-template-columns:1fr}.tray figure{aspect-ratio:16/10}}
+
+/* seasonal band */
+.season{background:var(--fascia);color:#fff;padding:clamp(3rem,7vw,6rem) 0;position:relative;overflow:hidden}
+.season .wrap{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(2rem,5vw,5rem);align-items:center}
+.season h2{color:#fff}
+.season p{color:var(--on-dark);max-width:46ch;margin-top:1rem}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.6rem}
+.chips span{border:1.5px solid rgba(255,255,255,.35);padding:.45rem .8rem;border-radius:3px;font-weight:600;font-size:.95rem}
+.price{background:#fff;color:var(--ink);border-radius:8px;padding:clamp(1.4rem,3vw,2.2rem);transform:rotate(-1.5deg);box-shadow:0 24px 50px -24px rgba(0,0,0,.5)}
+.price .big{font-family:var(--sign);font-weight:900;font-size:clamp(3.6rem,2.4rem + 4vw,6rem);line-height:.9;color:var(--red)}
+.price .big span{font-size:.45em;color:var(--fascia);vertical-align:.55em;margin:0 .15em}
+.price p{color:var(--muted);margin:0;font-size:1rem}
+.price b{display:block;font-family:var(--sign);text-transform:uppercase;letter-spacing:.1em;font-size:1.05rem;color:var(--fascia);margin-bottom:.4rem}
+@media (max-width:860px){.season .wrap{grid-template-columns:1fr}.price{transform:none;max-width:420px}}
+
+/* order ahead */
+.order{padding:clamp(3.5rem,8vw,7rem) 0;background:var(--render)}
+.order .wrap{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:clamp(2rem,5vw,5rem);align-items:start}
+.order .pics{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:1.8rem}
+.order .pics img{border-radius:6px;aspect-ratio:1;object-fit:cover;width:100%}
+.order .pics img:first-child{grid-row:span 2;aspect-ratio:auto;height:100%}
+.slip{background:#fff;border:2px solid var(--fascia);border-radius:6px;padding:clamp(1.2rem,3vw,2rem);position:relative}
+.slip h3{font-family:var(--sign);font-weight:800;text-transform:uppercase;font-size:1.7rem;color:var(--fascia);letter-spacing:.03em}
+.slip .sub{color:var(--muted);font-size:.95rem;margin:.2rem 0 1.2rem}
+.f{display:grid;gap:.35rem;margin-bottom:1rem}
+.f label{font-weight:700;font-size:.9rem}
+.f input,.f select,.f textarea{width:100%;border:1.5px solid #B9C6D4;border-radius:3px;padding:.75rem .8rem;background:#fff;min-height:48px}
+.f textarea{min-height:92px;resize:vertical}
+.f input:focus,.f select:focus,.f textarea:focus{border-color:var(--fascia);outline:2px solid rgba(16,50,90,.18)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+.kinds{display:flex;flex-wrap:wrap;gap:.45rem}
+.kinds label{display:inline-flex;align-items:center;gap:.4rem;border:1.5px solid #B9C6D4;border-radius:3px;padding:.5rem .7rem;font-weight:600;font-size:.92rem;cursor:pointer}
+.kinds input{accent-color:var(--fascia);width:auto;min-height:0;margin:0}
+.slip .btn{width:100%;margin-top:.4rem;cursor:pointer}
+.done{display:none;background:#EAF6EF;border:1.5px solid #9BD3B3;border-radius:4px;padding:1rem;margin-top:1rem;font-size:.95rem}
+.done.show{display:block}
+@media (max-width:900px){.order .wrap{grid-template-columns:1fr}}
+@media (max-width:420px){.two{grid-template-columns:1fr}}
+
+/* reviews */
+.reviews{background:#fff;padding:clamp(3.5rem,8vw,7rem) 0;border-top:1px solid var(--line)}
+.rv{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(1.5rem,4vw,4rem);margin-top:2rem}
+.q-big{font-family:var(--sign);font-weight:700;font-size:clamp(1.9rem,1.2rem + 2.6vw,3.5rem);line-height:1.02;text-transform:uppercase;color:var(--fascia)}
+.q-big::before{content:"\201C";color:var(--red)}
+.q-big::after{content:"\201D";color:var(--red)}
+.who{margin-top:1rem;color:var(--muted);font-size:.95rem}
+.who b{color:var(--ink)}
+.q-small{border-top:2px solid var(--fascia);padding:1rem 0 1.4rem}
+.q-small p{font-size:1.06rem}
+.stat{display:flex;gap:2.5rem;flex-wrap:wrap;margin-top:2.4rem;padding-top:1.4rem;border-top:1px solid var(--line)}
+.stat div b{display:block;font-family:var(--sign);font-weight:800;font-size:2.6rem;line-height:1;color:var(--fascia)}
+.stat div span{color:var(--muted);font-size:.9rem}
+@media (max-width:860px){.rv{grid-template-columns:1fr}}
+
+/* visit */
+.visit{background:var(--board);color:#fff;padding:clamp(3.5rem,8vw,6.5rem) 0}
+.visit .wrap{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:clamp(2rem,5vw,5rem)}
+.visit h2{color:#fff}
+.addr{font-size:1.2rem;margin-top:1.2rem;color:var(--on-dark)}
+.addr b{color:#fff}
+.hours{width:100%;border-collapse:collapse;margin-top:.4rem}
+.hours td{padding:.7rem 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:1.02rem}
+.hours td:last-child{text-align:right;font-weight:600}
+.hours tr.today td{color:#fff;font-weight:700}
+.hours tr.today td:first-child::after{content:" · today";color:#FF8A75;font-weight:600;font-size:.85rem}
+.visit .ctas .btn.ghost{color:#fff;border-color:rgba(255,255,255,.5)}
+.visit .ctas .btn.ghost:hover{background:rgba(255,255,255,.08)}
+.visit .ctas .btn.solid{background:var(--red);border-color:var(--red)}
+.small{font-size:.86rem;color:#8EA4BC;margin-top:1rem}
+@media (max-width:860px){.visit .wrap{grid-template-columns:1fr}}
+
+footer{background:#06111D;color:#7F93A8;font-size:.85rem;padding:1.6rem 0 calc(1.6rem + env(safe-area-inset-bottom))}
+footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+
+/* mobile action bar */
+.bar{display:none}
+@media (max-width:760px){
+  .bar{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--board);padding:.55rem .55rem calc(.55rem + env(safe-area-inset-bottom));gap:.55rem;box-shadow:0 -10px 30px rgba(0,0,0,.25)}
+  .bar a{display:flex;align-items:center;justify-content:center;gap:.45rem;min-height:50px;border-radius:3px;font-weight:700;text-decoration:none;color:#fff;background:var(--fascia-2)}
+  .bar a.c{background:var(--red)}
+  footer{padding-bottom:calc(5.5rem + env(safe-area-inset-bottom))}
+}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.flap .leaf,.flap .leaf2{display:none}}
+@media (forced-colors:active){.flap .h,.flap .leaf,.flap .leaf2{border:1px solid CanvasText}.btn,.call,.tabs button{border:2px solid ButtonText}}
+</style>
+</head>
+<body>
+<div class="ribbon"><b>Unofficial concept</b> by Shanmukh Kiran Sagar for The Home Bakery, Wick. Not the bakery's live website; the order slip is a demo.</div>
+
+<header class="fascia">
+  <div class="wrap">
+    <a class="mark" href="#top" aria-label="The Home Bakery, Wick"><b>The Home Bakery</b><span>Wick</span></a>
+    <nav class="nav" aria-label="Main">
+      <a class="l" href="#counter">Today's counter</a>
+      <a class="l" href="#order">Order ahead</a>
+      <a class="l" href="#visit">Find us</a>
+      <a class="call" href="tel:+441955602516"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span class="t">01955 602516</span><span class="sr">Call the bakery</span></a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero" aria-labelledby="h1">
+  <div class="wrap">
+    <div class="intro">
+      <span class="status" id="status"><i></i><span>Mon to Sat from 7am</span></span>
+      <h1 id="h1">Everything on the counter, every morning</h1>
+      <p class="lede">Pies, rolls, butteries, slices and hot food at 21 Francis Street. The board shows what's on today, straight from the bakery.</p>
+      <div class="ctas">
+        <a class="btn solid" href="#counter">See the whole counter</a>
+        <a class="btn ghost" href="#order">Order a cake or tray</a>
+      </div>
+    </div>
+
+    <div class="board" aria-label="Today's board">
+      <div class="board-top"><span>Today at</span><b>21 Francis St</b></div>
+      <div class="row"><div class="lbl">Soup</div><div class="flap" data-items="Tattie|Chicken rice"></div></div>
+      <div class="row"><div class="lbl">Pies</div><div class="flap" data-items="Steak &amp; white pudding|Mini scotch pies|Lasagne pies|Macaroni trays|Donner, chilli, cheese"></div></div>
+      <div class="row"><div class="lbl">Hot</div><div class="flap" data-items="Bacon &amp; egg rolls|Lorne sausage rolls|Big breakfasts|Baked potatoes|Cheeseburgers"></div></div>
+      <div class="row"><div class="lbl">Sweet</div><div class="flap" data-items="Caramel dream rings|Ghost tarts|Cream yum yums|Paradise slice|Chocolate éclairs"></div></div>
+      <div class="row"><div class="lbl">Rolls</div><div class="flap" data-items="Butteries|Softies|Bridge rolls|Wholemeal rolls"></div></div>
+      <div class="board-foot"><span>From the bakery's post, Sat 24 Oct</span><span>New bean-to-cup coffee</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="counter" id="counter" aria-labelledby="h2c">
+  <div class="wrap">
+    <div class="sec-h">
+      <h2 id="h2c">The whole counter</h2>
+      <p>The same list the bakery posts each morning, sorted so you can find your pie before you're at the front of the queue.</p>
+    </div>
+    <div class="tabs" role="tablist" aria-label="Counter sections">
+      <button role="tab" aria-selected="true" aria-controls="p1" id="t1">Pies &amp; savoury</button>
+      <button role="tab" aria-selected="false" aria-controls="p2" id="t2" tabindex="-1">Hot every day</button>
+      <button role="tab" aria-selected="false" aria-controls="p3" id="t3" tabindex="-1">Cakes &amp; slices</button>
+      <button role="tab" aria-selected="false" aria-controls="p4" id="t4" tabindex="-1">Rolls</button>
+      <button role="tab" aria-selected="false" aria-controls="p5" id="t5" tabindex="-1">Halloween</button>
+    </div>
+
+    <div class="panel tray" id="p1" role="tabpanel" aria-labelledby="t1">
+      <figure><img src="img/sausage-roll.jpg" alt="A flaky sausage roll in a paper bag" loading="lazy"><figcaption>Savoury</figcaption></figure>
+      <ul class="list">
+        <li>Steak &amp; white pudding pies</li><li>Steak, black pudding &amp; pepper sauce pies</li><li>Donner, chilli, cheese pies</li><li>Smoked sausage, bean &amp; cheese pies</li><li>Lasagne pies</li><li>Mini sausage rolls<small>6 pack</small></li><li>Mini scotch pies<small>4 pack</small></li><li>Mini macaroni pies<small>4 pack</small></li><li>Macaroni trays</li><li>Lasagne trays</li><li>Smoked sausage, cheese, bacon &amp; onion turnover</li><li>Bean wellingtons</li><li>Mini breakfasts</li><li>Big breakfasts</li>
+      </ul>
+    </div>
+    <div class="panel tray" id="p2" role="tabpanel" aria-labelledby="t2" hidden>
+      <figure><img src="img/rolls-tray.jpg" alt="A tray of baked rolls with sausages" loading="lazy"><figcaption>Hot every day</figcaption></figure>
+      <ul class="list">
+        <li>Hot dogs</li><li>Lorne sausage rolls</li><li>Sausages on rolls</li><li>Bacon rolls</li><li>Bacon &amp; egg rolls</li><li>Cheeseburgers</li><li>Double cheeseburger</li><li>Double bacon cheese burger</li><li>Salad boxes</li><li>Baked potatoes</li><li>Today's soup<small>changes daily</small></li>
+      </ul>
+    </div>
+    <div class="panel tray" id="p3" role="tabpanel" aria-labelledby="t3" hidden>
+      <figure><img src="img/cream-puff.jpg" alt="Cream-filled pastries drizzled with chocolate" loading="lazy"><figcaption>Sweet</figcaption></figure>
+      <ul class="list">
+        <li>Caramel dream rings</li><li>Dream rings</li><li>Chocolate éclairs</li><li>Cinnamon buns</li><li>Strawberry tarts</li><li>Jam &amp; cream stars</li><li>Toffee &amp; cream stars</li><li>Nutella cream croissants</li><li>Strawberry, Nutella &amp; cream croissants</li><li>Toffee pieces caramel &amp; cream doughnuts</li><li>Yum yums &amp; cream yum yums</li><li>Iced biscuits<small>2 pack</small></li><li>Butterfly, frosted &amp; iced cupcakes<small>2 packs</small></li><li>Brownie</li><li>Ginger, paradise, old school, birthday, toffee, carrot &amp; chocolate slices</li>
+      </ul>
+    </div>
+    <div class="panel tray" id="p4" role="tabpanel" aria-labelledby="t4" hidden>
+      <figure><img src="img/doughnut-trays.jpg" alt="Trays of fresh bakes behind the glass" loading="lazy"><figcaption>Rolls &amp; butteries</figcaption></figure>
+      <ul class="list">
+        <li>Rolls</li><li>Softies</li><li>Sandwich rolls</li><li>Bridge rolls</li><li>Brown rolls</li><li>Wholemeal rolls</li><li>Butteries</li>
+      </ul>
+    </div>
+    <div class="panel tray" id="p5" role="tabpanel" aria-labelledby="t5" hidden>
+      <figure><img src="img/cake-case.jpg" alt="Cakes and tarts in a glass counter" loading="lazy"><figcaption>Until 31 October</figcaption></figure>
+      <ul class="list">
+        <li>Ghost tarts</li><li>Halloween iced cupcakes</li><li>Halloween frosted cupcakes</li><li>Halloween big iced biscuits</li><li>Ready-made sweetie mixtures<small>£1 to £2</small></li>
+      </ul>
+    </div>
+    <p class="note">The bakery posts no prices with the daily list, so this concept leaves them off too. Lots of other specials are on every day.</p>
+  </div>
+</section>
+
+<section class="season" aria-labelledby="h2s">
+  <div class="wrap">
+    <div class="reveal">
+      <h2 id="h2s">Halloween is nearly here</h2>
+      <p>The bakery has been busy making spooky treats. Pop in and pick some up while they're here.</p>
+      <div class="chips"><span>Ghost tarts</span><span>Iced cupcakes</span><span>Frosted cupcakes</span><span>Big iced biscuits</span></div>
+    </div>
+    <div class="price reveal">
+      <b>For the trick-or-treaters</b>
+      <div class="big">£1<span>to</span>£2</div>
+      <p>Ready-made sweetie mixtures, ready to hand out at the door.</p>
+    </div>
+  </div>
+</section>
+
+<section class="order" id="order" aria-labelledby="h2o">
+  <div class="wrap">
+    <div>
+      <h2 id="h2o">Cakes, afternoon tea and party trays</h2>
+      <p class="lede" style="margin-top:1rem">Customers already order birthday cakes, afternoon tea and hampers from the bakery. This slip puts the details in one message, so nothing gets lost in comments.</p>
+      <div class="pics">
+        <img src="img/cake-case.jpg" alt="Celebration cakes and fruit tarts" loading="lazy">
+        <img src="img/cream-puff.jpg" alt="" loading="lazy">
+        <img src="img/sausage-roll.jpg" alt="" loading="lazy">
+      </div>
+    </div>
+    <form class="slip" id="slip" novalidate>
+      <h3>Order slip</h3>
+      <p class="sub">Collect from 21 Francis Street. Demo only: nothing is sent.</p>
+      <fieldset class="f" style="border:0">
+        <legend style="font-weight:700;font-size:.9rem;margin-bottom:.35rem">What's it for?</legend>
+        <div class="kinds">
+          <label><input type="radio" name="k" value="Birthday cake" checked> Birthday cake</label>
+          <label><input type="radio" name="k" value="Afternoon tea"> Afternoon tea</label>
+          <label><input type="radio" name="k" value="Party tray"> Pies &amp; rolls tray</label>
+          <label><input type="radio" name="k" value="Hamper"> Hamper</label>
+        </div>
+      </fieldset>
+      <div class="two">
+        <div class="f"><label for="n">Your name</label><input id="n" autocomplete="name" required></div>
+        <div class="f"><label for="ph">Phone</label><input id="ph" type="tel" autocomplete="tel" required></div>
+      </div>
+      <div class="two">
+        <div class="f"><label for="d">Collection day</label><input id="d" type="date" required></div>
+        <div class="f"><label for="ppl">How many people?</label><select id="ppl"><option>2 to 4</option><option>5 to 10</option><option>10 to 20</option><option>20+</option></select></div>
+      </div>
+      <div class="f"><label for="msg">Details</label><textarea id="msg" placeholder="e.g. chocolate sponge, three layers, 'Happy 50th Kevin'"></textarea></div>
+      <button class="btn solid" type="submit">Send to the bakery</button>
+      <div class="done" id="done" role="status" aria-live="polite"></div>
+    </form>
+  </div>
+</section>
+
+<section class="reviews" aria-labelledby="h2r">
+  <div class="wrap">
+    <h2 id="h2r">What Wick says</h2>
+    <div class="rv">
+      <div>
+        <p class="q-big">A proper bakers shop.</p>
+        <p class="who"><b>Tim D.</b> · Facebook review, 1 Oct 2021 · "Fantastic range of freshly baked produce. A proper bakers shop. Highly recommended."</p>
+      </div>
+      <div>
+        <div class="q-small"><p>"Got a lovely triple layered chocolate sponge birthday cake for the occasion of my 50th birthday. It was a lovely cake that everyone enjoyed."</p><p class="who"><b>Kevin S.</b> · Facebook, 17 Dec 2025</p></div>
+        <div class="q-small"><p>"We had the afternoon tea on Friday. Everything was so lovely and fresh. Great value for money."</p><p class="who"><b>Jennifer R.</b> · Facebook, 28 Feb 2021</p></div>
+      </div>
+    </div>
+    <div class="stat">
+      <div><b>100%</b><span>recommend on Facebook (26 reviews)</span></div>
+      <div><b>4.2K</b><span>people follow the daily list</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="visit" id="visit" aria-labelledby="h2v">
+  <div class="wrap">
+    <div>
+      <h2 id="h2v">Find the bakery</h2>
+      <p class="addr"><b>The Home Bakery</b><br>21 Francis Street, Wick, Caithness KW1 5PZ</p>
+      <div class="ctas">
+        <a class="btn solid" href="tel:+441955602516">Call 01955 602516</a>
+        <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&amp;query=21+Francis+Street+Wick+KW1+5PZ" target="_blank" rel="noopener">Directions</a>
+      </div>
+      <p class="small">In-store pickup. Email: rgmacdonaldhb@gmail.com</p>
+    </div>
+    <div>
+      <table class="hours" aria-label="Opening hours">
+        <tbody id="hours">
+          <tr data-d="1"><td>Monday</td><td>7am to 2pm</td></tr>
+          <tr data-d="2"><td>Tuesday</td><td>7am to 2pm</td></tr>
+          <tr data-d="3"><td>Wednesday</td><td>7am to 2pm</td></tr>
+          <tr data-d="4"><td>Thursday</td><td>7am to 2pm</td></tr>
+          <tr data-d="5"><td>Friday</td><td>7am to 2pm</td></tr>
+          <tr data-d="6"><td>Saturday</td><td>7am to 2pm</td></tr>
+          <tr data-d="0"><td>Sunday</td><td>See Facebook</td></tr>
+        </tbody>
+      </table>
+      <p class="small">Hours as listed on Google. The bakery would confirm these before launch.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><span><b style="color:#C9D6E4">The Home Bakery</b> · 21 Francis Street, Wick KW1 5PZ</span><span>Unofficial concept by Shanmukh Kiran Sagar. Photos: Unsplash (Unsplash Licence), standing in for the bakery's own.</span></div></footer>
+
+<nav class="bar" aria-label="Quick actions"><a class="c" href="tel:+441955602516">Call the bakery</a><a href="#counter">Today's counter</a></nav>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // UK time helpers
+  function ukNow(){
+    var p = new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/London',weekday:'short',hour:'numeric',minute:'numeric',hour12:false}).formatToParts(new Date());
+    var o={}; p.forEach(function(x){o[x.type]=x.value});
+    var days={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6};
+    return {d:days[o.weekday], m:(+o.hour%24)*60+(+o.minute)};
+  }
+  var t=ukNow(), st=document.getElementById('status'), lab=st.querySelector('span');
+  var open = t.d>=1 && t.d<=6 && t.m>=420 && t.m<840;
+  if(open){st.classList.add('open'); lab.textContent='Open now · until 2pm';}
+  else if(t.d>=1 && t.d<=6 && t.m<420){lab.textContent='Opens today at 7am';}
+  else if(t.d===6 || t.d===0){lab.textContent='Closed now · opens Monday 7am';}
+  else {lab.textContent='Closed now · opens tomorrow 7am';}
+  var tr=document.querySelector('#hours tr[data-d="'+t.d+'"]'); if(tr) tr.classList.add('today');
+
+  // split-flap board
+  var flaps=[].slice.call(document.querySelectorAll('.flap'));
+  function esc(s){var d=document.createElement('div');d.textContent=s;return d.innerHTML}
+  flaps.forEach(function(f,i){
+    var items=f.getAttribute('data-items').split('|').map(function(s){var d=document.createElement('textarea');d.innerHTML=s;return d.value});
+    f._items=items; f._i=0;
+    f.setAttribute('aria-live','off');
+    f.innerHTML='<div class="h top"><span></span></div><div class="h bot"><span></span></div><div class="leaf"><span></span></div><div class="leaf2"><span></span></div><span class="sr"></span>';
+    set(f,items[0],true);
+  });
+  function set(f,txt,instant){
+    var top=f.querySelector('.top span'), bot=f.querySelector('.bot span'), leaf=f.querySelector('.leaf'), leaf2=f.querySelector('.leaf2');
+    f.querySelector('.sr').textContent=txt;
+    if(instant||reduce){top.textContent=txt;bot.textContent=txt;return}
+    var old=top.textContent;
+    leaf.firstChild.textContent=old; leaf2.firstChild.textContent=txt;
+    top.textContent=txt; // revealed behind falling leaf
+    leaf.classList.remove('go'); leaf2.classList.remove('go'); void leaf.offsetWidth;
+    leaf.style.display='block'; leaf2.style.display='block';
+    leaf.classList.add('go'); leaf2.classList.add('go');
+    setTimeout(function(){bot.textContent=txt; leaf.style.display='none'; leaf2.style.display='none'; leaf.classList.remove('go'); leaf2.classList.remove('go');},900);
+  }
+  if(!reduce){
+    flaps.forEach(function(f){f.querySelector('.leaf').style.display='none';f.querySelector('.leaf2').style.display='none';});
+    var tick=0;
+    setInterval(function(){
+      if(document.hidden) return;
+      var f=flaps[tick%flaps.length]; tick++;
+      if(f._items.length<2) return;
+      f._i=(f._i+1)%f._items.length; set(f,f._items[f._i]);
+    },1400);
+  }
+
+  // tabs
+  var tabs=[].slice.call(document.querySelectorAll('[role=tab]'));
+  function sel(tb){tabs.forEach(function(x){var on=x===tb;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;document.getElementById(x.getAttribute('aria-controls')).hidden=!on;});}
+  tabs.forEach(function(tb,i){
+    tb.addEventListener('click',function(){sel(tb)});
+    tb.addEventListener('keydown',function(e){var k=e.key;if(k==='ArrowRight'||k==='ArrowLeft'){e.preventDefault();var n=tabs[(i+(k==='ArrowRight'?1:tabs.length-1))%tabs.length];sel(n);n.focus();}});
+  });
+
+  // demo form
+  var slip=document.getElementById('slip'), done=document.getElementById('done');
+  var d=document.getElementById('d'); var tm=new Date(Date.now()+864e5*2); d.min=new Date().toISOString().slice(0,10); d.value=tm.toISOString().slice(0,10);
+  slip.addEventListener('submit',function(e){
+    e.preventDefault();
+    var name=document.getElementById('n').value.trim()||'there';
+    var k=slip.querySelector('input[name=k]:checked').value;
+    done.textContent='Thanks '+name+'. Demo only: on the live site this '+k.toLowerCase()+' request would go straight to the bakery\u2019s inbox, with your phone number, for collection on '+new Date(d.value).toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long'})+'.';
+    done.classList.add('show');
+  });
+
+  // light reveal on two bands only
+  if('IntersectionObserver' in window && !reduce){
+    var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.2});
+    document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+  } else document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in')});
+})();
+</script>
+</body>
+</html>

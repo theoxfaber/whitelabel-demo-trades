@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>The Sprouted Kitchen · 42 Market Place, Bedale (concept)</title>
+<meta name="description" content="Unofficial website concept for The Sprouted Kitchen, a family-run café on Bedale Market Place.">
+<meta name="theme-color" content="#211912">
+<link rel="preload" as="font" type="font/woff2" href="fonts/Archivo-400-900.woff2" crossorigin>
+<style>
+@font-face{font-family:"Archivo";font-weight:400 900;font-stretch:62% 125%;font-display:swap;src:url(fonts/Archivo-400-900.woff2) format("woff2")}
+@font-face{font-family:"Instrument Sans";font-weight:400 700;font-display:swap;src:url(fonts/InstrumentSans-400-700.woff2) format("woff2")}
+:root{
+  --soil:#211912; --soil-2:#2E241B; --green:#2E6A32; --green-2:#24552A; --leaf:#E6EFDA; --leaf-2:#D5E4C3; --white:#fff;
+  --ink:#1C2416; --muted:#4D5A44; --on-dark:#D7D0C4; --marigold:#F2A11F; --mari-ink:#8A5300;
+  --disp:"Archivo","Arial Black",system-ui,sans-serif; --text:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --pad:clamp(1.1rem,4.2vw,3.5rem); --ease:cubic-bezier(.22,1,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{font-family:var(--text);font-size:clamp(1rem,.96rem + .22vw,1.14rem);line-height:1.6;color:var(--ink);background:var(--leaf);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--marigold);outline-offset:3px}
+.wrap{width:min(1320px,100% - 2*var(--pad));margin-inline:auto}
+.x{font-family:var(--disp);font-stretch:125%;font-weight:900;text-transform:uppercase;letter-spacing:-.005em}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+.ribbon{background:#120D09;color:#BDB4A6;font-size:.8rem;text-align:center;padding:.5rem var(--pad);line-height:1.4}
+.ribbon b{color:#fff;font-weight:600}
+
+header.top{background:var(--soil);color:#fff}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:72px}
+.mark{display:flex;align-items:center;gap:.7rem;text-decoration:none}
+.mark svg{width:30px;height:30px;flex:none}
+.mark b{font-family:var(--disp);font-stretch:118%;font-weight:800;font-size:clamp(1rem,.85rem + .5vw,1.2rem);letter-spacing:.02em;text-transform:uppercase;line-height:1.05}
+.nav{display:flex;align-items:center;gap:clamp(1rem,2.2vw,2.2rem)}
+.nav a{font-weight:600;font-size:.95rem;text-decoration:none;color:#E6DFD3}
+.nav a:hover{color:#fff;text-decoration:underline;text-underline-offset:5px}
+.go{display:inline-flex;align-items:center;gap:.5rem;background:var(--marigold);color:#241500;text-decoration:none;font-weight:700;padding:.7rem 1.05rem;border-radius:2px;white-space:nowrap}
+.go:hover{background:#FFB43C}
+@media (max-width:900px){.nav a.l{display:none}}
+@media (max-width:400px){.mark b{font-size:.92rem}.go{padding:.6rem .75rem;font-size:.9rem}}
+
+/* stage: hero + packet flip */
+.stage{background:var(--soil);color:#fff;position:relative}
+.stage-in{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:clamp(2rem,5vw,5rem);align-items:center;min-height:calc(100svh - 110px);padding:clamp(2rem,5vw,4rem) 0}
+.copy .kick{display:inline-flex;gap:.6rem;align-items:center;font-weight:600;font-size:.92rem;color:var(--on-dark)}
+.copy .kick i{width:9px;height:9px;border-radius:50%;background:#8A8275;flex:none}
+.copy .kick.open i{background:#7DD35C;box-shadow:0 0 0 4px rgba(125,211,92,.18)}
+h1{font-size:clamp(2.6rem,1.3rem + 4.9vw,5.6rem);line-height:.9;margin:1rem 0 1.2rem;color:#fff;text-wrap:balance}
+h1 em{font-style:normal;color:var(--marigold)}
+.lede{color:var(--on-dark);max-width:38ch;font-size:clamp(1.05rem,1rem + .35vw,1.25rem)}
+.ctas{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.8rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font-weight:700;text-decoration:none;padding:.95rem 1.3rem;border-radius:2px;min-height:52px;border:2px solid transparent;cursor:pointer;background:none}
+.btn.m{background:var(--marigold);color:#241500}
+.btn.m:hover{background:#FFB43C}
+.btn.o{border-color:rgba(255,255,255,.45);color:#fff}
+.btn.o:hover{background:rgba(255,255,255,.07)}
+.btn.g{background:var(--green);color:#fff}
+.btn.g:hover{background:var(--green-2)}
+.steps{margin-top:2.2rem;display:flex;gap:1.4rem;font-size:.9rem;color:#9E968A}
+.steps span.on{color:#fff}
+.steps span::before{content:"";display:inline-block;width:22px;height:2px;background:currentColor;vertical-align:middle;margin-right:.5rem}
+
+.packet-wrap{perspective:1600px;display:flex;justify-content:center}
+.packet{position:relative;width:min(440px,100%);aspect-ratio:5/7.2;transform-style:preserve-3d;transition:transform .9s var(--ease);will-change:transform}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:#fff;color:var(--ink);border-radius:4px;overflow:hidden;box-shadow:0 40px 70px -30px rgba(0,0,0,.7),0 0 0 1px rgba(0,0,0,.06);display:flex;flex-direction:column}
+.face::before{content:"";position:absolute;left:0;right:0;top:0;height:16px;background:repeating-linear-gradient(90deg,#E3E7DD 0 6px,#fff 6px 12px);z-index:2}
+.back{transform:rotateY(180deg)}
+.f-head{background:var(--green);color:#fff;padding:2rem 1.2rem .9rem;text-align:center}
+.f-head small{display:block;font-weight:600;letter-spacing:.24em;font-size:.68rem;text-transform:uppercase;opacity:.85}
+.f-head b{display:block;font-family:var(--disp);font-stretch:125%;font-weight:900;text-transform:uppercase;font-size:clamp(1.25rem,.9rem + 1.3vw,1.75rem);line-height:.95;margin-top:.35rem}
+.f-pic{position:relative;flex:1;margin:.9rem .9rem 0;border-radius:3px;overflow:hidden;min-height:0;background:var(--leaf-2)}
+.f-pic img{width:100%;height:100%;object-fit:cover}
+.f-pic .seal{position:absolute;right:.6rem;top:.6rem;width:74px;height:74px;border-radius:50%;background:var(--marigold);color:#241500;display:grid;place-items:center;text-align:center;font-family:var(--disp);font-stretch:110%;font-weight:900;font-size:.62rem;line-height:1.05;text-transform:uppercase;transform:rotate(10deg);padding:.4rem}
+.f-foot{padding:.9rem 1.1rem 1.1rem;display:grid;grid-template-columns:1fr auto;gap:.3rem 1rem;align-items:end}
+.f-foot .var{font-family:var(--disp);font-stretch:125%;font-weight:900;text-transform:uppercase;font-size:clamp(1rem,.8rem + .7vw,1.25rem);color:var(--green);line-height:1}
+.f-foot .meta{font-size:.78rem;color:var(--muted);grid-column:1/-1;border-top:1px dashed #C9D2BE;padding-top:.5rem;margin-top:.3rem;display:flex;justify-content:space-between;gap:.6rem;flex-wrap:wrap}
+.f-foot .wt{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);text-align:right}
+.b-body{padding:1.6rem 1.3rem 1.2rem;display:flex;flex-direction:column;gap:.9rem;flex:1}
+.b-body h3{font-family:var(--disp);font-stretch:125%;font-weight:900;text-transform:uppercase;color:var(--green);font-size:1.2rem;line-height:1}
+.inst{display:grid;grid-template-columns:auto 1fr;gap:.6rem .9rem;font-size:clamp(.88rem,.8rem + .3vw,1rem);line-height:1.4}
+.inst dt{font-weight:700;text-transform:uppercase;font-size:.72rem;letter-spacing:.1em;color:var(--green);padding-top:.15rem}
+.inst dd{color:var(--ink)}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;margin-top:.2rem}
+.cal span{font-size:.66rem;font-weight:700;text-align:center;padding:.38rem 0;border-radius:2px;background:#EEF2E8;color:#7A8670}
+.cal span.on{background:var(--green);color:#fff}
+.rowart{width:100%;height:auto;margin-top:auto}
+.b-foot{border-top:1px dashed #C9D2BE;padding-top:.7rem;font-size:.76rem;color:var(--muted);display:flex;justify-content:space-between;gap:.5rem;flex-wrap:wrap}
+.turn{display:none}
+@media (min-width:961px){
+  .stage{height:210vh}
+  .stage-sticky{position:sticky;top:0}
+}
+@media (max-width:960px){
+  .stage-in{grid-template-columns:1fr;min-height:0;gap:2rem;padding-bottom:3rem}
+  .steps{display:none}
+  .turn{display:inline-flex;margin:1.2rem auto 0}
+  .packet-col{display:flex;flex-direction:column;align-items:center}
+  .packet{width:min(300px,80vw)}
+  .stage-in{gap:1.4rem}.copy{display:contents}.kick{order:1}h1{order:2;margin:0}.packet-col{order:3}.lede{order:4}.ctas{order:5;margin-top:0}
+}
+@media (max-width:360px){h1{font-size:2.2rem}}
+@media (max-width:360px){.f-pic .seal{width:62px;height:62px;font-size:.55rem}.b-body{padding:1.3rem 1rem 1rem;gap:.7rem}.inst{font-size:.85rem}}
+
+/* special */
+.special{padding:clamp(3.5rem,8vw,7rem) 0;background:var(--leaf)}
+.special .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(2rem,5vw,5rem);align-items:center}
+h2{font-size:clamp(2rem,1.2rem + 3.2vw,4rem);line-height:.92;color:var(--green);text-wrap:balance}
+.special p.s{color:var(--muted);margin-top:1rem;max-width:40ch}
+.tag{position:relative;background:#fff;border-radius:6px;padding:clamp(1.4rem,3vw,2.4rem) clamp(1.4rem,3vw,2.4rem) clamp(1.4rem,3vw,2rem) clamp(3.2rem,6vw,4.4rem);box-shadow:0 30px 60px -36px rgba(33,25,18,.5)}
+.tag::before{content:"";position:absolute;left:clamp(1.1rem,2.2vw,1.6rem);top:50%;width:18px;height:18px;margin-top:-9px;border-radius:50%;background:var(--leaf);box-shadow:inset 0 0 0 2px #C8D5B8}
+.tag .when{display:inline-block;background:var(--marigold);color:#241500;font-weight:700;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;padding:.3rem .6rem;border-radius:2px}
+.tag h3{font-family:var(--disp);font-stretch:125%;font-weight:900;text-transform:uppercase;font-size:clamp(1.4rem,1rem + 1.6vw,2.3rem);line-height:.95;margin:.9rem 0 .3rem;color:var(--soil)}
+.tag .or{display:flex;align-items:center;gap:.8rem;margin:.9rem 0;color:var(--muted);font-weight:700;text-transform:uppercase;font-size:.8rem;letter-spacing:.14em}
+.tag .or::before,.tag .or::after{content:"";height:1px;background:#D4DCCB;flex:1}
+.tag .fine{color:var(--muted);font-size:.9rem;margin-top:1rem}
+@media (max-width:860px){.special .wrap{grid-template-columns:1fr}}
+
+/* catalogue */
+.cat{background:#fff;padding:clamp(3.5rem,8vw,7rem) 0}
+.cat-h{display:flex;justify-content:space-between;align-items:end;gap:2rem;flex-wrap:wrap}
+.cat-h p{max-width:44ch;color:var(--muted)}
+.cat-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(2rem,5vw,5rem);margin-top:clamp(2rem,4vw,3rem)}
+.items{list-style:none;border-top:2px solid var(--soil)}
+.items li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.3rem 1.5rem;padding:1.15rem 0;border-bottom:1px solid #DCE3D3}
+.items h3{font-family:var(--disp);font-stretch:112%;font-weight:800;font-size:clamp(1.12rem,1rem + .5vw,1.4rem);line-height:1.15;color:var(--soil)}
+.items p{grid-column:1/-1;color:var(--muted);font-size:.98rem;max-width:56ch}
+.items .k{display:flex;gap:.35rem;align-items:start;padding-top:.2rem}
+.items .k span{font-size:.7rem;font-weight:700;letter-spacing:.06em;border:1.5px solid var(--green);color:var(--green);padding:.12rem .4rem;border-radius:2px;white-space:nowrap}
+.side{display:flex;flex-direction:column;gap:1rem}
+.side figure{border-radius:4px;overflow:hidden;aspect-ratio:4/5}
+.side figure img{width:100%;height:100%;object-fit:cover}
+.sprouts{background:var(--leaf);border-radius:4px;padding:1.3rem 1.4rem}
+.sprouts b{font-family:var(--disp);font-stretch:125%;font-weight:900;text-transform:uppercase;color:var(--green);font-size:1.1rem;display:block}
+.sprouts p{color:var(--muted);font-size:.95rem;margin-top:.3rem}
+@media (max-width:900px){.cat-grid{grid-template-columns:1fr}.side{flex-direction:column}.side figure{aspect-ratio:16/10}}
+
+/* dogs */
+.dogs{background:var(--green);color:#fff;overflow:hidden}
+.dogs .wrap{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:0;align-items:stretch}
+.dogs .txt{padding:clamp(3rem,7vw,6rem) clamp(0rem,4vw,4rem) clamp(3rem,7vw,6rem) 0}
+.dogs h2{color:#fff}
+.dogs blockquote{margin-top:1.6rem;font-size:clamp(1.1rem,1rem + .5vw,1.4rem);line-height:1.45;max-width:36ch;color:#EAF3E3}
+.dogs cite{display:block;font-style:normal;font-size:.9rem;color:#BFD6B4;margin-top:.7rem}
+.dogs figure{position:relative;min-height:340px}
+.dogs figure img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+@media (max-width:860px){.dogs .wrap{grid-template-columns:1fr;width:100%}.dogs .txt{padding:3rem var(--pad)}.dogs figure{min-height:300px}}
+
+/* platters form */
+.platter{padding:clamp(3.5rem,8vw,7rem) 0;background:var(--leaf)}
+.platter .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(2rem,5vw,5rem);align-items:start}
+.platter .q{margin-top:1.4rem;border-left:3px solid var(--green);padding-left:1rem;color:var(--ink)}
+.platter .q cite{display:block;font-style:normal;color:var(--muted);font-size:.88rem;margin-top:.4rem}
+form.card{background:#fff;border-radius:6px;padding:clamp(1.2rem,3vw,2.2rem);box-shadow:0 30px 60px -40px rgba(33,25,18,.45)}
+.f{display:grid;gap:.35rem;margin-bottom:1rem}
+.f label{font-weight:700;font-size:.9rem}
+.f input,.f select,.f textarea{width:100%;border:1.5px solid #BFCAB3;border-radius:2px;padding:.75rem .8rem;background:#fff;min-height:48px}
+.f textarea{min-height:96px;resize:vertical}
+.f input:focus,.f select:focus,.f textarea:focus{border-color:var(--green);outline:2px solid rgba(46,106,50,.2)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+.checks{display:flex;flex-wrap:wrap;gap:.45rem}
+.checks label{display:inline-flex;align-items:center;gap:.45rem;border:1.5px solid #BFCAB3;border-radius:2px;padding:.5rem .7rem;font-weight:600;font-size:.92rem;cursor:pointer}
+.checks input{accent-color:var(--green);width:auto;min-height:0;margin:0}
+form.card .btn{width:100%}
+.done{display:none;background:#EDF6E6;border:1.5px solid #A9CF95;border-radius:3px;padding:1rem;margin-top:1rem;font-size:.95rem}
+.done.show{display:block}
+@media (max-width:900px){.platter .wrap{grid-template-columns:1fr}}
+@media (max-width:420px){.two{grid-template-columns:1fr}}
+
+/* reviews */
+.rev{background:#fff;padding:clamp(3.5rem,8vw,7rem) 0}
+.scores{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:2px solid var(--soil);border-bottom:1px solid #DCE3D3;margin-top:2rem}
+.scores div{padding:1.3rem 1rem 1.3rem 0}
+.scores div+div{border-left:1px solid #DCE3D3;padding-left:1.2rem}
+.scores b{display:block;font-family:var(--disp);font-stretch:125%;font-weight:900;font-size:clamp(2rem,1.4rem + 2vw,3.2rem);line-height:1;color:var(--green)}
+.scores span{font-size:.9rem;color:var(--muted)}
+.quotes{columns:3 18rem;column-gap:2.4rem;margin-top:2.4rem}
+.quotes figure{break-inside:avoid;margin-bottom:2rem}
+.quotes blockquote{font-size:1.05rem;line-height:1.55}
+.quotes figcaption{font-size:.86rem;color:var(--muted);margin-top:.5rem}
+@media (max-width:560px){.scores{grid-template-columns:1fr}.scores div+div{border-left:0;padding-left:0;border-top:1px solid #DCE3D3}}
+
+/* visit */
+.visit{background:var(--soil);color:#fff;padding:clamp(3.5rem,8vw,6.5rem) 0}
+.visit .wrap{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:clamp(2rem,5vw,5rem)}
+.visit h2{color:#fff}
+.visit .addr{margin-top:1.2rem;font-size:1.15rem;color:var(--on-dark)}
+.visit .addr b{color:#fff}
+.hours{width:100%;border-collapse:collapse}
+.hours td{padding:.75rem 0;border-bottom:1px solid rgba(255,255,255,.12)}
+.hours td:last-child{text-align:right;font-weight:600}
+.hours tr.today td{color:var(--marigold);font-weight:700}
+.walk{margin-top:1.2rem;display:inline-block;border:1.5px dashed rgba(255,255,255,.4);padding:.6rem .9rem;border-radius:2px;font-weight:600}
+.small{font-size:.86rem;color:#A79F92;margin-top:1rem}
+@media (max-width:860px){.visit .wrap{grid-template-columns:1fr}}
+footer{background:#120D09;color:#968D80;font-size:.85rem;padding:1.6rem 0 calc(1.6rem + env(safe-area-inset-bottom))}
+footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.bar{display:none}
+@media (max-width:760px){
+  .bar{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--soil);padding:.55rem .55rem calc(.55rem + env(safe-area-inset-bottom));gap:.55rem;box-shadow:0 -10px 30px rgba(0,0,0,.3)}
+  .bar a{display:flex;align-items:center;justify-content:center;min-height:50px;border-radius:2px;font-weight:700;text-decoration:none;color:#fff;background:var(--green)}
+  .bar a.m{background:var(--marigold);color:#241500}
+  footer{padding-bottom:calc(5.5rem + env(safe-area-inset-bottom))}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.packet{transition:none}}
+@media (forced-colors:active){.face,.tag,form.card{border:1px solid CanvasText}.btn,.go{border:2px solid ButtonText}}
+</style>
+</head>
+<body>
+<div class="ribbon"><b>Unofficial concept</b> by Shanmukh Kiran Sagar for The Sprouted Kitchen, Bedale. Not the café's live website; the enquiry form is a demo.</div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="#top" aria-label="The Sprouted Kitchen"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 29V15" stroke="#8CC63F" stroke-width="2.4" stroke-linecap="round"/><path d="M16 17c0-6 4.5-10 11-10 0 6.5-4.5 10-11 10Z" fill="#8CC63F"/><path d="M16 20c0-5-3.8-8.4-9.5-8.4 0 5.4 3.8 8.4 9.5 8.4Z" fill="#5EA33B"/></svg><b>The Sprouted<br>Kitchen</b></a>
+    <nav class="nav" aria-label="Main">
+      <a class="l" href="#special">This week</a>
+      <a class="l" href="#menu">Menu</a>
+      <a class="l" href="#visit">Visit</a>
+      <a class="go" href="https://www.google.com/maps/search/?api=1&amp;query=The+Sprouted+Kitchen+42+Market+Place+Bedale+DL8+1EQ" target="_blank" rel="noopener">Directions</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<section class="stage" id="stage" aria-labelledby="h1">
+  <div class="stage-sticky">
+    <div class="wrap stage-in">
+      <div class="copy">
+        <span class="kick" id="kick"><i></i><span>Tuesday to Saturday · walk-ins only</span></span>
+        <h1 class="x" id="h1">Walk in, sit down, bring <em>the dog</em></h1>
+        <p class="lede">A family-run café on Bedale Market Place for breakfast, brunch, lunch and cake, with vegan and gluten-free options and local produce. No booking needed.</p>
+        <div class="ctas">
+          <a class="btn m" href="#special">This week's special</a>
+          <a class="btn o" href="#visit">Opening times</a>
+        </div>
+        <div class="steps" aria-hidden="true"><span class="on" id="s1">Front of the packet</span><span id="s2">Growing instructions</span></div>
+      </div>
+      <div class="packet-col">
+        <div class="packet-wrap">
+          <div class="packet" id="packet">
+            <div class="face front" aria-label="Packet front">
+              <div class="f-head"><small>Bedale · Market Place</small><b>The Sprouted Kitchen</b></div>
+              <div class="f-pic"><img src="img/table.jpg" alt="A table full of brunch plates, fries and coffee" fetchpriority="high"><span class="seal">Dog<br>friendly</span></div>
+              <div class="f-foot">
+                <span class="var">Brunch, lunch<br>&amp; cake</span><span class="wt">Family<br>run</span>
+                <span class="meta"><span>Vegan &amp; GF options</span><span>Little Sprouts menu</span></span>
+              </div>
+            </div>
+            <div class="face back" aria-label="Packet back: how to visit">
+              <div class="f-head"><small>Growing instructions</small><b>How to visit</b></div>
+              <div class="b-body">
+                <dl class="inst">
+                  <dt>Sow</dt><dd>Tuesday to Saturday</dd>
+                  <dt>Sprouts</dt><dd>10am Tue to Thu, 9:30am Fri and Sat</dd>
+                  <dt>Harvest</dt><dd>Until 2:30pm, or 3pm Fri and Sat</dd>
+                  <dt>Spacing</dt><dd>No bookings. Walk in and find a table.</dd>
+                  <dt>Plot</dt><dd>42 Market Place, Bedale DL8 1EQ</dd>
+                  <dt>Companions</dt><dd>Dogs very welcome</dd>
+                </dl>
+                <div class="cal" aria-hidden="true"><span>M</span><span class="on">T</span><span class="on">W</span><span class="on">T</span><span class="on">F</span><span class="on">S</span><span>S</span></div>
+                <svg class="rowart" viewBox="0 0 320 64" preserveAspectRatio="xMidYMax meet" aria-hidden="true"><path d="M0 62h320" stroke="#8A6A4A" stroke-width="2" stroke-dasharray="2 6"/><g fill="none" stroke="#2E6A32" stroke-width="2" stroke-linecap="round"><path d="M30 62V40"/><path d="M30 46c0-9 7-15 16-15 0 9-7 15-16 15Z" fill="#8CC63F"/><path d="M30 50c0-7-5-12-12-12 0 7 5 12 12 12Z" fill="#5EA33B"/><path d="M110 62V30"/><path d="M110 38c0-11 8-18 19-18 0 11-8 18-19 18Z" fill="#8CC63F"/><path d="M110 44c0-9-7-15-15-15 0 9 7 15 15 15Z" fill="#5EA33B"/><path d="M190 62V44"/><path d="M190 49c0-7 5-12 12-12 0 7-5 12-12 12Z" fill="#8CC63F"/><path d="M270 62V24"/><path d="M270 33c0-12 9-20 21-20 0 12-9 20-21 20Z" fill="#8CC63F"/><path d="M270 41c0-10-8-17-17-17 0 10 8 17 17 17Z" fill="#5EA33B"/></g></svg>
+                <div class="b-foot"><span>Packed in Bedale</span><span>Best enjoyed warm</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="btn g turn" id="turn" type="button" aria-pressed="false">Turn the packet over</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="special" id="special" aria-labelledby="h2s">
+  <div class="wrap">
+    <div>
+      <h2 class="x" id="h2s">Friyay special</h2>
+      <p class="s">Posted by the café on Friday 23 October. Limited availability, so it's first come, first served.</p>
+    </div>
+    <div class="tag">
+      <span class="when">Fridays · while it lasts</span>
+      <h3>Brisket &amp; Stilton toasted artisan baguette</h3>
+      <p>with fries</p>
+      <div class="or">or</div>
+      <h3>Brisket &amp; Blue loaded fries</h3>
+      <p class="fine">On the live site, the café posts this once and it shows here and on Facebook at the same time.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cat" id="menu" aria-labelledby="h2m">
+  <div class="wrap">
+    <div class="cat-h">
+      <h2 class="x" id="h2m">From the menu</h2>
+      <p>A small menu with good variety. These are the dishes regulars mention most; the full menu would sit here, kept up to date by the café.</p>
+    </div>
+    <div class="cat-grid">
+      <ul class="items">
+        <li><h3>Breakfast sandwiches &amp; flat whites</h3><div class="k"><span>To take out</span></div><p>Breakfast sandwiches to take out, and great coffee in a nice small cup.</p></li>
+        <li><h3>Chicken Parmo</h3><div class="k"><span>Lunch</span></div><p>On the new lunch menu from June 2026. "Had the Chicken Parmo for lunch today. Was fab." (David N., on Facebook)</p></li>
+        <li><h3>Halloumi &amp; avocado flatbread</h3><div class="k"><span>V</span></div><p>Recommended by name in a five-star Google review.</p></li>
+        <li><h3>The Sprouted Goodness salad bowl</h3><div class="k"><span>Lunch</span></div><p>Known for its house dressing.</p></li>
+        <li><h3>Loaded fries</h3><div class="k"><span>Specials</span></div><p>One of the things people talk about most in Google reviews.</p></li>
+        <li><h3>Cake</h3><div class="k"><span>All day</span></div><p>Brunch, lunch, then cake. Vegan and gluten-free options too.</p></li>
+      </ul>
+      <aside class="side">
+        <figure><img src="img/brunch.jpg" alt="Brunch plates and a coffee on a wooden table" loading="lazy"></figure>
+        <div class="sprouts"><b>Little Sprouts</b><p>A menu for the smallest guests, so the whole family can sit down together.</p></div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="dogs" aria-labelledby="h2d">
+  <div class="wrap">
+    <div class="txt">
+      <h2 class="x" id="h2d">Dog friendly, properly</h2>
+      <blockquote>"It's incredibly dog friendly. We really enjoyed our food and drinks, and our dog Albert appreciated all the fuss and treats."</blockquote>
+      <cite>Google review, December 2024</cite>
+    </div>
+    <figure><img src="img/dog.jpg" alt="A scruffy terrier resting its chin on a café table" loading="lazy"></figure>
+  </div>
+</section>
+
+<section class="platter" aria-labelledby="h2p">
+  <div class="wrap">
+    <div>
+      <h2 class="x" id="h2p">Platters for the office</h2>
+      <p class="lede" style="color:var(--muted);margin-top:1rem">Local offices already order large platters, vegan options included. A simple form means the details arrive in one message.</p>
+      <p class="q">"We have had large platters in our office for the last two years running. They provide a wide range of vegan options that are gorgeous."<cite>Google review, March 2023</cite></p>
+    </div>
+    <form class="card" id="pform" novalidate>
+      <div class="two">
+        <div class="f"><label for="n">Your name</label><input id="n" autocomplete="name"></div>
+        <div class="f"><label for="e">Email</label><input id="e" type="email" autocomplete="email"></div>
+      </div>
+      <div class="two">
+        <div class="f"><label for="d">Day needed</label><input id="d" type="date"></div>
+        <div class="f"><label for="p">People</label><select id="p"><option>6 to 10</option><option>10 to 20</option><option>20 to 40</option><option>40+</option></select></div>
+      </div>
+      <fieldset class="f" style="border:0"><legend style="font-weight:700;font-size:.9rem;margin-bottom:.35rem">Dietary needs</legend>
+        <div class="checks"><label><input type="checkbox"> Vegan</label><label><input type="checkbox"> Vegetarian</label><label><input type="checkbox"> Gluten-free</label><label><input type="checkbox"> Allergies (tell us below)</label></div>
+      </fieldset>
+      <div class="f"><label for="m">Anything else?</label><textarea id="m" placeholder="Pick-up time, allergies, budget"></textarea></div>
+      <button class="btn g" type="submit">Send enquiry</button>
+      <div class="done" id="done" role="status" aria-live="polite"></div>
+    </form>
+  </div>
+</section>
+
+<section class="rev" aria-labelledby="h2r">
+  <div class="wrap">
+    <h2 class="x" id="h2r">Bedale's word for it</h2>
+    <div class="scores">
+      <div><b>4.8</b><span>Google, 166 reviews</span></div>
+      <div><b>4.9</b><span>Tripadvisor, 164 reviews · #4 of 38 in Bedale</span></div>
+      <div><b>100%</b><span>recommend on Facebook, 51 reviews</span></div>
+    </div>
+    <div class="quotes">
+      <figure><blockquote>"The food was at another level only equalled by the friendly attentive staff. Now we know the secret too!"</blockquote><figcaption>Google review, December 2024</figcaption></figure>
+      <figure><blockquote>"Top marks! Excellent food and pleasant staff. Nice to sit outside."</blockquote><figcaption>Google review, May 2024</figcaption></figure>
+      <figure><blockquote>"Service was warm, friendly, and helpful, dealing with our allergies sensibly and knowledgeably."</blockquote><figcaption>Google review, September 2022</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="visit" id="visit" aria-labelledby="h2v">
+  <div class="wrap">
+    <div>
+      <h2 class="x" id="h2v">Find us on the Market Place</h2>
+      <p class="addr"><b>The Sprouted Kitchen</b><br>42 Market Place, Bedale DL8 1EQ</p>
+      <span class="walk">No bookings: walk in only</span>
+      <div class="ctas">
+        <a class="btn m" href="https://www.google.com/maps/search/?api=1&amp;query=The+Sprouted+Kitchen+42+Market+Place+Bedale+DL8+1EQ" target="_blank" rel="noopener">Get directions</a>
+        <a class="btn o" href="https://www.instagram.com/the_sprouted.kitchen/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+      <p class="small">thesproutedkitchen@outlook.com</p>
+    </div>
+    <div>
+      <table class="hours" aria-label="Opening hours"><tbody id="hours">
+        <tr data-d="2"><td>Tuesday</td><td>10am to 2:30pm</td></tr>
+        <tr data-d="3"><td>Wednesday</td><td>10am to 2:30pm</td></tr>
+        <tr data-d="4"><td>Thursday</td><td>10am to 2:30pm</td></tr>
+        <tr data-d="5"><td>Friday</td><td>9:30am to 3pm</td></tr>
+        <tr data-d="6"><td>Saturday</td><td>9:30am to 3pm</td></tr>
+        <tr data-d="0"><td>Sunday and Monday</td><td>Closed</td></tr>
+      </tbody></table>
+      <p class="small">Hours as listed on Google.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><span><b style="color:#D7D0C4">The Sprouted Kitchen</b> · 42 Market Place, Bedale DL8 1EQ</span><span>Unofficial concept by Shanmukh Kiran Sagar. Photos: Unsplash (Unsplash Licence), standing in for the café's own.</span></div></footer>
+<nav class="bar" aria-label="Quick actions"><a class="m" href="https://www.google.com/maps/search/?api=1&amp;query=The+Sprouted+Kitchen+42+Market+Place+Bedale+DL8+1EQ" target="_blank" rel="noopener">Directions</a><a href="#special">This week</a></nav>
+
+<script>
+(function(){
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function uk(){var p=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/London',weekday:'short',hour:'numeric',minute:'numeric',hour12:false}).formatToParts(new Date()),o={};p.forEach(function(x){o[x.type]=x.value});return{d:{Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6}[o.weekday],m:(+o.hour%24)*60+(+o.minute)}}
+  var t=uk(), hrs={2:[600,870],3:[600,870],4:[600,870],5:[570,900],6:[570,900]};
+  var k=document.getElementById('kick'), ks=k.querySelector('span'), h=hrs[t.d];
+  if(h&&t.m>=h[0]&&t.m<h[1]){k.classList.add('open');ks.textContent='Open now · walk straight in';}
+  else if(h&&t.m<h[0]){ks.textContent='Opens today at '+(h[0]===600?'10am':'9:30am')+' · walk-ins only';}
+  else ks.textContent='Closed now · open Tuesday to Saturday';
+  var row=document.querySelector('#hours tr[data-d="'+(t.d===1?0:t.d)+'"]'); if(row) row.classList.add('today');
+
+  var packet=document.getElementById('packet'), stage=document.getElementById('stage'), s1=document.getElementById('s1'), s2=document.getElementById('s2');
+  var desk=matchMedia('(min-width:961px)');
+  function onScroll(){
+    if(!desk.matches||reduce) return;
+    var r=stage.getBoundingClientRect(), total=stage.offsetHeight-innerHeight;
+    var p=Math.min(1,Math.max(0,-r.top/Math.max(1,total)));
+    var e=p<.25?0:p>.75?1:(p-.25)/.5; e=e<.5?2*e*e:1-Math.pow(-2*e+2,2)/2;
+    packet.style.transition='none';
+    packet.style.transform='rotateY('+(e*180).toFixed(1)+'deg) rotateZ('+((1-Math.abs(e-.5)*2)*-3).toFixed(2)+'deg)';
+    var back=e>.5; s1.classList.toggle('on',!back); s2.classList.toggle('on',back);
+  }
+  addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  var turn=document.getElementById('turn'), flipped=false;
+  turn.addEventListener('click',function(){flipped=!flipped;packet.style.transition='';packet.style.transform=flipped?'rotateY(180deg)':'rotateY(0)';turn.setAttribute('aria-pressed',flipped);turn.textContent=flipped?'Turn back to the front':'Turn the packet over';});
+  desk.addEventListener&&desk.addEventListener('change',function(){packet.style.transform='';flipped=false;onScroll();});
+
+  var f=document.getElementById('pform'), done=document.getElementById('done'), d=document.getElementById('d');
+  d.min=new Date().toISOString().slice(0,10);
+  f.addEventListener('submit',function(e){e.preventDefault();var n=document.getElementById('n').value.trim()||'there';done.textContent='Thanks '+n+'. Demo only: on the live site this enquiry would land in the caf\u00e9\u2019s inbox with everything they need to quote.';done.classList.add('show');});
+})();
+</script>
+</body>
+</html>

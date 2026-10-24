@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>PR Bakery Deli &amp; more · 600 N Lincoln St, Wilmington (concept)</title>
+<meta name="description" content="Unofficial website concept for PR Bakery Deli & more, a Puerto Rican bakery and deli in Wilmington, Delaware.">
+<meta name="theme-color" content="#0B1533">
+<link rel="preload" as="font" type="font/woff2" href="fonts/Anybody-400-900.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="fonts/Sacramento-400.woff2" crossorigin>
+<style>
+@font-face{font-family:"Anybody";font-weight:400 900;font-stretch:50% 150%;font-display:swap;src:url(fonts/Anybody-400-900.woff2) format("woff2")}
+@font-face{font-family:"Manrope";font-weight:400 700;font-display:swap;src:url(fonts/Manrope-400-700.woff2) format("woff2")}
+@font-face{font-family:"Sacramento";font-weight:400;font-display:block;src:url(fonts/Sacramento-400.woff2) format("woff2")}
+:root{
+  --night:#0B1533; --dawn:#12204A; --dusk:#1B2C60; --morning:#EEF3FF; --white:#fff; --ink:#0E1630; --muted:#4A5576; --line:#D4DBEE;
+  --neon:#FF3D57; --neon-d:#D92440; --glow:#FF8798; --on-dark:#BFC9E6;
+  --wide:"Anybody","Arial Black",system-ui,sans-serif; --text:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --pad:clamp(1.1rem,4.2vw,3.5rem); --ease:cubic-bezier(.22,1,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{font-family:var(--text);font-size:clamp(1rem,.96rem + .22vw,1.14rem);line-height:1.6;color:var(--ink);background:var(--night);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--glow);outline-offset:3px}
+.wrap{width:min(1320px,100% - 2*var(--pad));margin-inline:auto}
+.w{font-family:var(--wide);font-stretch:125%;font-weight:800;letter-spacing:-.01em}
+[hidden]{display:none!important}
+
+.ribbon{background:#060C20;color:#9AA6C8;font-size:.8rem;text-align:center;padding:.5rem var(--pad);line-height:1.4}
+.ribbon b{color:#fff;font-weight:600}
+header.top{position:relative;z-index:5;color:#fff}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:70px}
+.mark{text-decoration:none;font-family:var(--wide);font-stretch:130%;font-weight:800;font-size:1.05rem;letter-spacing:.02em;line-height:1}
+.mark small{display:block;font-family:var(--text);font-weight:600;font-size:.72rem;letter-spacing:.18em;color:var(--on-dark);text-transform:uppercase;margin-top:.25rem}
+.right{display:flex;align-items:center;gap:clamp(.7rem,2vw,1.6rem)}
+.right a.l{font-weight:600;font-size:.95rem;text-decoration:none;color:#DDE3F5}
+.right a.l:hover{color:#fff;text-decoration:underline;text-underline-offset:5px}
+.lang{display:inline-flex;border:1.5px solid rgba(255,255,255,.35);border-radius:3px;overflow:hidden}
+.lang button{background:none;border:0;color:#DDE3F5;font-weight:700;font-size:.82rem;padding:.45rem .6rem;cursor:pointer;letter-spacing:.06em}
+.lang button[aria-pressed=true]{background:#fff;color:var(--night)}
+.callb{display:inline-flex;align-items:center;background:var(--neon);color:#fff;text-decoration:none;font-weight:700;padding:.68rem 1rem;border-radius:3px;white-space:nowrap}
+.callb:hover{background:var(--neon-d)}
+@media (max-width:900px){.right a.l{display:none}}
+@media (max-width:440px){.callb{display:none}.mark{font-size:.95rem}}
+@media (max-width:360px){h1{font-size:2.15rem}}
+
+/* night hero */
+.hero{position:relative;color:#fff;overflow:hidden;padding:clamp(1.5rem,4vw,3rem) 0 clamp(3rem,7vw,6rem)}
+.sky{position:absolute;inset:0;z-index:-1;background:radial-gradient(120% 70% at 50% 110%,#2A3D7E 0%,rgba(42,61,126,0) 60%),linear-gradient(180deg,#070E25,#0B1533 55%,#14245A)}
+.stars{position:absolute;inset:0;z-index:-1;opacity:.55;background-image:radial-gradient(1px 1px at 12% 18%,#fff 50%,transparent 51%),radial-gradient(1px 1px at 28% 8%,#fff 50%,transparent 51%),radial-gradient(1.5px 1.5px at 66% 14%,#fff 50%,transparent 51%),radial-gradient(1px 1px at 82% 26%,#fff 50%,transparent 51%),radial-gradient(1px 1px at 44% 30%,#fff 50%,transparent 51%),radial-gradient(1px 1px at 91% 9%,#fff 50%,transparent 51%),radial-gradient(1px 1px at 6% 40%,#fff 50%,transparent 51%)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:clamp(2rem,4vw,4rem);align-items:center}
+.sign{position:relative;aspect-ratio:1.2/1;border-radius:14px;background:#0A1230;box-shadow:inset 0 0 0 2px #1F2C5A,0 40px 80px -40px rgba(0,0,0,.8);display:flex;align-items:center;justify-content:center;padding:6%}
+.sign::before{content:"";position:absolute;inset:16px;border-radius:8px;border:1px dashed rgba(255,255,255,.08)}
+.sign svg{width:100%;height:auto;overflow:visible}
+.tube{font-family:"Sacramento",cursive;fill:none;stroke:#FFD3DA;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1400;stroke-dashoffset:1400}
+.tube-glow{fill:none;stroke:var(--neon);stroke-width:9;opacity:0;filter:url(#blur)}
+.lit .tube{animation:draw 2.2s var(--ease) forwards}
+.lit .tube-glow{animation:glowon .1s 2s forwards,flick 4.5s 2.2s infinite}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes glowon{to{opacity:.85}}
+@keyframes flick{0%,100%{opacity:.85}47%{opacity:.85}48%{opacity:.35}49%{opacity:.85}51%{opacity:.4}52%{opacity:.85}}
+.box-tube{fill:none;stroke:#BFD4FF;stroke-width:2.2;opacity:.25;transition:opacity .2s}
+.box-glow{fill:none;stroke:#5C8BFF;stroke-width:8;filter:url(#blur);opacity:0}
+.lit .box-tube{animation:on .05s 2.5s forwards}
+.lit .box-glow{animation:on2 .05s 2.5s forwards}
+@keyframes on{to{opacity:1}}
+@keyframes on2{to{opacity:.7}}
+.abierto{font-family:var(--wide);font-stretch:140%;font-weight:700;letter-spacing:.18em}
+.ab-t{fill:none;stroke:#FFE1E6;stroke-width:1.6;opacity:.25}
+.ab-g{fill:none;stroke:var(--neon);stroke-width:6;filter:url(#blur);opacity:0}
+.lit .ab-t{animation:on .05s 2.9s forwards}
+.lit .ab-g{animation:on2 .05s 2.9s forwards,flick 6s 3.2s infinite}
+.kick{display:inline-flex;align-items:center;gap:.55rem;font-weight:600;font-size:.92rem;color:var(--on-dark)}
+.kick i{width:9px;height:9px;border-radius:50%;background:#6E7899;flex:none}
+.kick.open i{background:var(--neon);box-shadow:0 0 0 4px rgba(255,61,87,.2),0 0 12px var(--neon)}
+h1{font-size:clamp(2.4rem,1.3rem + 4.2vw,5rem);line-height:.95;margin:1rem 0 1.2rem;text-wrap:balance}
+h1 span{color:var(--glow);text-shadow:0 0 18px rgba(255,61,87,.55)}
+.lede{color:var(--on-dark);max-width:40ch;font-size:clamp(1.05rem,1rem + .35vw,1.25rem)}
+.ctas{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.8rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font-weight:700;text-decoration:none;padding:.95rem 1.3rem;border-radius:3px;min-height:52px;border:2px solid transparent;cursor:pointer;background:none}
+.btn.n{background:var(--neon);color:#fff}.btn.n:hover{background:var(--neon-d)}
+.btn.o{border-color:rgba(255,255,255,.45);color:#fff}.btn.o:hover{background:rgba(255,255,255,.07)}
+.btn.d{background:var(--ink);color:#fff}.btn.d:hover{background:#1D2A55}
+.btn.ol{border-color:var(--ink);color:var(--ink)}.btn.ol:hover{background:#fff}
+@media (max-width:960px){.hero .wrap{grid-template-columns:1fr}.hero .intro{display:contents}.kick{order:1}.hero h1{order:2;margin:0}.sign{order:3;aspect-ratio:1.35/1}.lede{order:4}.ctas{order:5;margin-top:0}}
+
+/* sunrise strip */
+.sunrise{height:clamp(140px,22vw,260px);background:linear-gradient(180deg,#14245A 0%,#3A4E92 30%,#C9A5C6 62%,#FFD9B8 82%,var(--morning) 100%);position:relative}
+.sunrise .clock{position:absolute;left:50%;bottom:22%;transform:translateX(-50%);font-family:var(--wide);font-stretch:140%;font-weight:800;color:#fff;font-size:clamp(1rem,.8rem + 1vw,1.5rem);letter-spacing:.2em;text-shadow:0 2px 12px rgba(20,36,90,.5)}
+
+/* day */
+.day{background:var(--morning)}
+h2{font-size:clamp(2rem,1.2rem + 3.2vw,4rem);line-height:.95;color:var(--ink);text-wrap:balance}
+.sec{padding:clamp(3rem,7vw,6rem) 0}
+.sec-h{display:flex;justify-content:space-between;align-items:end;gap:2rem;flex-wrap:wrap}
+.sec-h p{color:var(--muted);max-width:44ch}
+.sand{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(2rem,5vw,4.5rem);margin-top:2.2rem;align-items:start}
+.menu{list-style:none;border-top:2px solid var(--ink)}
+.menu li{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--line)}
+.menu h3{font-family:var(--wide);font-stretch:118%;font-weight:750;font-size:clamp(1.15rem,1rem + .7vw,1.6rem);line-height:1.1}
+.menu h3 em{font-style:normal;font-family:var(--text);font-weight:600;font-size:.6em;color:var(--muted);margin-left:.4rem;letter-spacing:0}
+.menu .b{font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:var(--neon);padding:.25rem .5rem;border-radius:2px;white-space:nowrap}
+.bread{background:#fff;border-radius:6px;padding:1.2rem 1.3rem;margin-top:1.4rem;display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:center;border:1.5px solid var(--line)}
+.bread img{width:84px;height:84px;object-fit:cover;border-radius:50%}
+.bread b{font-family:var(--wide);font-stretch:125%;font-weight:800;display:block;font-size:1.1rem}
+.bread p{color:var(--muted);font-size:.95rem}
+.sand figure{border-radius:6px;overflow:hidden;position:sticky;top:1.5rem}
+.sand figure img{width:100%;aspect-ratio:4/5;object-fit:cover}
+@media (max-width:900px){.sand{grid-template-columns:1fr}.sand figure{position:relative;top:0}.sand figure img{aspect-ratio:16/11}}
+
+.sweets{background:var(--ink);color:#fff}
+.sweets .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(2rem,5vw,5rem);align-items:center}
+.sweets h2{color:#fff}
+.sweets img{border-radius:6px;width:100%;aspect-ratio:1;object-fit:cover}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.6rem}
+.chips span{border:1.5px solid rgba(255,255,255,.3);padding:.5rem .85rem;border-radius:3px;font-weight:600}
+.flan-q{margin-top:2rem;font-family:var(--wide);font-stretch:115%;font-weight:700;font-size:clamp(1.3rem,1rem + 1.2vw,2rem);line-height:1.15}
+.flan-q span{color:var(--glow)}
+.flan-c{color:var(--on-dark);font-size:.92rem;margin-top:.6rem}
+@media (max-width:860px){.sweets .wrap{grid-template-columns:1fr}.sweets img{aspect-ratio:16/10}}
+
+.cater .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(2rem,5vw,5rem);align-items:start}
+form.card{background:#fff;border-radius:6px;padding:clamp(1.2rem,3vw,2.2rem);border:1.5px solid var(--line)}
+.f{display:grid;gap:.35rem;margin-bottom:1rem}
+.f label,.f legend{font-weight:700;font-size:.9rem}
+.f input,.f select,.f textarea{width:100%;border:1.5px solid #BAC4DE;border-radius:3px;padding:.75rem .8rem;background:#fff;min-height:48px}
+.f textarea{min-height:96px;resize:vertical}
+.f input:focus,.f select:focus,.f textarea:focus{border-color:var(--ink);outline:2px solid rgba(14,22,48,.15)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+form.card .btn{width:100%}
+.done{display:none;background:#FFF0F2;border:1.5px solid #FFB3BE;border-radius:3px;padding:1rem;margin-top:1rem;font-size:.95rem}
+.done.show{display:block}
+@media (max-width:900px){.cater .wrap{grid-template-columns:1fr}}
+@media (max-width:420px){.two{grid-template-columns:1fr}}
+
+.rev{background:#fff}
+.qs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(1.5rem,4vw,3.5rem);margin-top:2.2rem}
+.qs figure{border-top:2px solid var(--ink);padding-top:1.1rem}
+.qs blockquote{font-size:clamp(1.05rem,1rem + .35vw,1.25rem);line-height:1.5}
+.qs figcaption{color:var(--muted);font-size:.9rem;margin-top:.6rem}
+.qs figcaption b{color:var(--ink)}
+.score{display:flex;gap:2.6rem;flex-wrap:wrap;margin-top:2.4rem;color:var(--muted);font-size:.92rem}
+.score b{display:block;font-family:var(--wide);font-stretch:130%;font-weight:800;font-size:2.4rem;line-height:1;color:var(--ink)}
+@media (max-width:760px){.qs{grid-template-columns:1fr}}
+
+.visit{background:var(--night);color:#fff}
+.visit .wrap{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:clamp(2rem,5vw,5rem)}
+.visit h2{color:#fff}
+.addr{margin-top:1.2rem;font-size:1.15rem;color:var(--on-dark)}
+.addr b{color:#fff}
+.hours{width:100%;border-collapse:collapse}
+.hours td{padding:.75rem 0;border-bottom:1px solid rgba(255,255,255,.12)}
+.hours td:last-child{text-align:right;font-weight:600}
+.hours tr.today td{color:var(--glow);font-weight:700}
+.social{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.2rem;font-weight:600}
+.social a{color:#DDE3F5}
+.small{font-size:.86rem;color:#8E99BC;margin-top:1rem}
+@media (max-width:860px){.visit .wrap{grid-template-columns:1fr}}
+footer{background:#050A1B;color:#7E89AD;font-size:.85rem;padding:1.6rem 0 calc(1.6rem + env(safe-area-inset-bottom))}
+footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.bar{display:none}
+@media (max-width:760px){
+  .bar{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:50;background:#070E25;padding:.55rem .55rem calc(.55rem + env(safe-area-inset-bottom));gap:.55rem;box-shadow:0 -10px 30px rgba(0,0,0,.3)}
+  .bar a{display:flex;align-items:center;justify-content:center;min-height:50px;border-radius:3px;font-weight:700;text-decoration:none;color:#fff;background:var(--dusk)}
+  .bar a.n{background:var(--neon)}
+  footer{padding-bottom:calc(5.5rem + env(safe-area-inset-bottom))}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.tube{stroke-dashoffset:0}.lit .tube,.lit .tube-glow,.lit .ab-g,.lit .box-glow{animation:none}.tube-glow,.ab-g,.box-glow{opacity:.8}.box-tube,.ab-t{opacity:1}}
+@media (forced-colors:active){.btn,.callb{border:2px solid ButtonText}}
+</style>
+</head>
+<body>
+<div class="ribbon"><b>Unofficial concept</b> by Shanmukh Kiran Sagar for PR Bakery Deli &amp; more. Not the bakery's live website; the catering form is a demo.</div>
+
+<div class="hero" id="top">
+  <div class="sky" aria-hidden="true"></div><div class="stars" aria-hidden="true"></div>
+  <header class="top">
+    <div class="wrap">
+      <a class="mark" href="#top">PR Bakery Deli<small>&amp; more · Wilmington</small></a>
+      <div class="right">
+        <a class="l" href="#sandwiches" data-t="nav1">Sandwiches</a>
+        <a class="l" href="#dulces" data-t="nav2">Sweets</a>
+        <a class="l" href="#visit" data-t="nav3">Hours</a>
+        <div class="lang" role="group" aria-label="Language"><button type="button" aria-pressed="true" data-l="en">EN</button><button type="button" aria-pressed="false" data-l="es">ES</button></div>
+        <a class="callb" href="tel:+13024857293" data-t="call">Call to order</a>
+      </div>
+    </div>
+  </header>
+  <main>
+  <section class="wrap" aria-labelledby="h1" style="padding-top:clamp(1rem,3vw,2.5rem)">
+    <div class="intro">
+      <span class="kick" id="kick"><i></i><span>Open Wednesday to Sunday from 6am</span></span>
+      <h1 class="w" id="h1" data-t="h1">Pan sobao, just baked, <span>from 6am</span></h1>
+      <p class="lede" data-t="lede">A Puerto Rican bakery and deli on N Lincoln Street. Breakfast, Cubanos, tripletas and our famous BoriCuba, all on fresh pan sobao.</p>
+      <div class="ctas">
+        <a class="btn n" href="tel:+13024857293" data-t="cta1">Call (302) 485-7293</a>
+        <a class="btn o" href="https://www.doordash.com/store/pr-bakery-wilmington-28896615" target="_blank" rel="noopener" data-t="cta2">Order on DoorDash</a>
+      </div>
+    </div>
+    <div class="sign" id="sign" role="img" aria-label="Neon sign reading Pan Sobao, Abierto 6AM">
+      <svg viewBox="0 0 600 460" aria-hidden="true">
+        <defs><filter id="blur" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="6"/></filter></defs>
+        <rect class="box-glow" x="40" y="40" width="520" height="380" rx="26"/>
+        <rect class="box-tube" x="40" y="40" width="520" height="380" rx="26"/>
+        <text class="tube-glow" x="300" y="215" text-anchor="middle" font-family="Sacramento" font-size="128">Pan Sobao</text>
+        <text class="tube" x="300" y="215" text-anchor="middle" font-size="128">Pan Sobao</text>
+        <text class="abierto ab-g" x="300" y="340" text-anchor="middle" font-size="40">ABIERTO 6AM</text>
+        <text class="abierto ab-t" x="300" y="340" text-anchor="middle" font-size="40">ABIERTO 6AM</text>
+      </svg>
+    </div>
+  </section>
+  </main>
+</div>
+
+<div class="sunrise" aria-hidden="true"><span class="clock" id="clock">6:00 AM</span></div>
+
+<div class="day">
+<section class="sec" id="sandwiches" aria-labelledby="h2s">
+  <div class="wrap">
+    <div class="sec-h">
+      <h2 class="w" id="h2s" data-t="h2s">Breakfast &amp; sandwiches</h2>
+      <p data-t="p2s">Straight from the bakery's own posts. Pick yours, call it in, or grab it on DoorDash.</p>
+    </div>
+    <div class="sand">
+      <div>
+        <ul class="menu">
+          <li><h3>BoriCuba</h3><span class="b" data-t="famous">Famous</span></li>
+          <li><h3>Cubano <em>Cuban sandwich</em></h3></li>
+          <li><h3>Tripleta</h3></li>
+          <li><h3>Pernil <em>roast pork</em></h3></li>
+          <li><h3>Pollo asado <em>roast chicken</em></h3></li>
+          <li><h3>Mortadella</h3></li>
+          <li><h3>Jamón, queso y huevo <em>ham, cheese &amp; egg</em></h3></li>
+          <li><h3 data-t="bk">Breakfasts</h3></li>
+        </ul>
+        <div class="bread"><img src="img/bread.jpg" alt="Soft white rolls fresh from the oven" loading="lazy"><div><b>Pan sobao</b><p data-t="bread">"The best sobao bread in Delaware, just baked." Every sandwich starts here.</p></div></div>
+      </div>
+      <figure><img src="img/breakfast.jpg" alt="Breakfast sandwiches with egg and cheese" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec sweets" id="dulces" aria-labelledby="h2d">
+  <div class="wrap">
+    <img src="img/flan.jpg" alt="A caramel flan on a plate" loading="lazy">
+    <div>
+      <h2 class="w" id="h2d" data-t="h2d">Dulces &amp; pastelillos</h2>
+      <div class="chips"><span>Flan</span><span>Tres leches</span><span>Quesitos</span><span>Pastelillos de guayaba</span><span>Empanadillas</span><span>Pasteles</span></div>
+      <p class="flan-q">"All the desserts are amazing but <span>the flan is too good for words!</span> Best flan ever!"</p>
+      <p class="flan-c">Angie G. · Facebook review, December 25, 2024</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec cater" aria-labelledby="h2c">
+  <div class="wrap">
+    <div>
+      <h2 class="w" id="h2c" data-t="h2c">Catering for your next party</h2>
+      <p style="color:var(--muted);margin-top:1rem;max-width:40ch" data-t="pc">The bakery already caters by message. This form puts the date, headcount and order in one place.</p>
+    </div>
+    <form class="card" id="cform" novalidate>
+      <div class="two"><div class="f"><label for="n" data-t="fn">Name</label><input id="n" autocomplete="name"></div><div class="f"><label for="ph" data-t="fp">Phone</label><input id="ph" type="tel" autocomplete="tel"></div></div>
+      <div class="two"><div class="f"><label for="d" data-t="fd">Date</label><input id="d" type="date"></div><div class="f"><label for="g" data-t="fg">Guests</label><select id="g"><option>10 to 20</option><option>20 to 50</option><option>50 to 100</option><option>100+</option></select></div></div>
+      <div class="f"><label for="m" data-t="fm">What would you like?</label><textarea id="m" placeholder="Tripletas, pastelillos, flan..."></textarea></div>
+      <button class="btn d" type="submit" data-t="fs">Send catering request</button>
+      <div class="done" id="done" role="status" aria-live="polite"></div>
+    </form>
+  </div>
+</section>
+
+<section class="sec rev" aria-labelledby="h2r">
+  <div class="wrap">
+    <h2 class="w" id="h2r" data-t="h2r">A taste of back home</h2>
+    <div class="qs">
+      <figure><blockquote>"So happy I found this little place!! All the food is amazing and tastes just like it does in PR!! Super friendly staff as well!"</blockquote><figcaption><b>Erica B.</b> · Facebook, February 9, 2025</figcaption></figure>
+      <figure><blockquote>"The pan sobao, tres leches, flan, pastelitos de guayaba, and quesitos were all delicious. The service was also wonderful."</blockquote><figcaption><b>Jalyssa N.</b> · Google review</figcaption></figure>
+      <figure><blockquote>"Great Puerto Rican pastries, desert, empanadas and more!! Food is very good and authentic."</blockquote><figcaption><b>Norma B.</b> · Facebook, April 19, 2025</figcaption></figure>
+      <figure><blockquote>"Empanadas were fresh and delicious and the pastries hit the spot: light, flaky, and perfect sweetness."</blockquote><figcaption><b>Sheri T.</b> · Facebook, September 8, 2024</figcaption></figure>
+    </div>
+    <div class="score"><div><b>4.8</b>Google, 84 reviews</div><div><b>100%</b>recommend on Facebook</div><div><b>6am</b>open Wednesday to Sunday</div></div>
+  </div>
+</section>
+
+<section class="sec visit" id="visit" aria-labelledby="h2v">
+  <div class="wrap">
+    <div>
+      <h2 class="w" id="h2v" data-t="h2v">Come by early</h2>
+      <p class="addr"><b>PR Bakery Deli &amp; more</b><br>600 N Lincoln St, Wilmington, DE 19805</p>
+      <div class="ctas">
+        <a class="btn n" href="tel:+13024857293">(302) 485-7293</a>
+        <a class="btn o" href="https://www.google.com/maps/search/?api=1&amp;query=PR+Bakery+Deli+600+N+Lincoln+St+Wilmington+DE" target="_blank" rel="noopener" data-t="dir">Directions</a>
+      </div>
+      <div class="social"><a href="https://www.doordash.com/store/pr-bakery-wilmington-28896615" target="_blank" rel="noopener">DoorDash</a><a href="https://www.instagram.com/prbakeryanddeli/" target="_blank" rel="noopener">Instagram</a><a href="https://www.tiktok.com/@pr.bakery.and.deli" target="_blank" rel="noopener">TikTok</a></div>
+      <p class="small">prbakeryanddeli@gmail.com</p>
+    </div>
+    <div>
+      <table class="hours" aria-label="Opening hours"><tbody id="hours">
+        <tr data-d="3"><td data-t="wed">Wednesday</td><td>6am to 8pm</td></tr>
+        <tr data-d="4"><td data-t="thu">Thursday</td><td>6am to 8pm</td></tr>
+        <tr data-d="5"><td data-t="fri">Friday</td><td>6am to 8pm</td></tr>
+        <tr data-d="6"><td data-t="sat">Saturday</td><td>6am to 8pm</td></tr>
+        <tr data-d="0"><td data-t="sun">Sunday</td><td>6am to 8pm</td></tr>
+        <tr data-d="1"><td data-t="montue">Monday and Tuesday</td><td data-t="closed">Closed</td></tr>
+      </tbody></table>
+    </div>
+  </div>
+</section>
+</div>
+
+<footer><div class="wrap"><span><b style="color:#BFC9E6">PR Bakery Deli &amp; more</b> · 600 N Lincoln St, Wilmington, DE 19805</span><span>Unofficial concept by Shanmukh Kiran Sagar. Photos: Unsplash (Unsplash License), standing in for the bakery's own.</span></div></footer>
+<nav class="bar" aria-label="Quick actions"><a class="n" href="tel:+13024857293" data-t="call">Call to order</a><a href="https://www.doordash.com/store/pr-bakery-wilmington-28896615" target="_blank" rel="noopener">DoorDash</a></nav>
+
+<script>
+(function(){
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // light the sign when fonts are ready
+  var sign=document.getElementById('sign');
+  (document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(function(){requestAnimationFrame(function(){sign.classList.add('lit')})});
+  // open status (Wilmington = America/New_York)
+  var p=new Intl.DateTimeFormat('en-US',{timeZone:'America/New_York',weekday:'short',hour:'numeric',minute:'numeric',hour12:false}).formatToParts(new Date()),o={};p.forEach(function(x){o[x.type]=x.value});
+  var d={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6}[o.weekday], m=(+o.hour%24)*60+(+o.minute);
+  var openDay=(d===0||d>=3), open=openDay&&m>=360&&m<1200;
+  var k=document.getElementById('kick'), ks=k.querySelector('span');
+  var row=document.querySelector('#hours tr[data-d="'+(d===2?1:d)+'"]'); if(row) row.classList.add('today');
+  // sunrise clock follows scroll
+  var clock=document.getElementById('clock');
+  if(!reduce){addEventListener('scroll',function(){var r=clock.parentNode.getBoundingClientRect();var t=Math.min(1,Math.max(0,1-(r.top/innerHeight)));var mins=Math.min(59,Math.round(t*45));clock.textContent='6:'+String(mins).padStart(2,'0')+' AM';},{passive:true});}
+  // language toggle
+  var T={
+    en:{nav1:'Sandwiches',nav2:'Sweets',nav3:'Hours',call:'Call to order',h1:'Pan sobao, just baked, <span>from 6am</span>',lede:'A Puerto Rican bakery and deli on N Lincoln Street. Breakfast, Cubanos, tripletas and our famous BoriCuba, all on fresh pan sobao.',cta1:'Call (302) 485-7293',cta2:'Order on DoorDash',h2s:'Breakfast &amp; sandwiches',p2s:"Straight from the bakery's own posts. Pick yours, call it in, or grab it on DoorDash.",famous:'Famous',bk:'Breakfasts',bread:'"The best sobao bread in Delaware, just baked." Every sandwich starts here.',h2d:'Dulces &amp; pastelillos',h2c:'Catering for your next party',pc:'The bakery already caters by message. This form puts the date, headcount and order in one place.',fn:'Name',fp:'Phone',fd:'Date',fg:'Guests',fm:'What would you like?',fs:'Send catering request',h2r:'A taste of back home',h2v:'Come by early',dir:'Directions',wed:'Wednesday',thu:'Thursday',fri:'Friday',sat:'Saturday',sun:'Sunday',montue:'Monday and Tuesday',closed:'Closed',
+      open:'Open now · until 8pm',soon:'Opens today at 6am',shut:'Closed now · open Wednesday to Sunday from 6am',later:'Closed now · opens tomorrow at 6am',done:function(n){return 'Thanks '+n+'! Demo only: on the live site this request would go straight to the bakery with your phone number.'}},
+    es:{nav1:'Sándwiches',nav2:'Dulces',nav3:'Horario',call:'Llama y ordena',h1:'Pan sobao acabadito de hornear, <span>desde las 6am</span>',lede:'Panadería y deli puertorriqueño en la N Lincoln Street. Desayunos, cubanos, tripletas y nuestro famoso BoriCuba, todo en pan sobao fresco.',cta1:'Llama al (302) 485-7293',cta2:'Ordena por DoorDash',h2s:'Desayunos y sándwiches',p2s:'Directo de las publicaciones de la panadería. Escoge el tuyo, llámanos u ordena por DoorDash.',famous:'Famoso',bk:'Desayunos',bread:'"El mejor pan sobao en Delaware, acabadito de hornear." Cada sándwich empieza aquí.',h2d:'Dulces y pastelillos',h2c:'Catering para tu próxima fiesta',pc:'La panadería ya hace catering por mensaje. Este formulario reúne la fecha, los invitados y la orden en un solo lugar.',fn:'Nombre',fp:'Teléfono',fd:'Fecha',fg:'Invitados',fm:'¿Qué te gustaría?',fs:'Enviar solicitud de catering',h2r:'Un sabor de casa',h2v:'Ven temprano',dir:'Cómo llegar',wed:'Miércoles',thu:'Jueves',fri:'Viernes',sat:'Sábado',sun:'Domingo',montue:'Lunes y martes',closed:'Cerrado',
+      open:'Abierto ahora · hasta las 8pm',soon:'Abre hoy a las 6am',shut:'Cerrado ahora · abierto de miércoles a domingo desde las 6am',later:'Cerrado ahora · abre mañana a las 6am',done:function(n){return '¡Gracias '+n+'! Solo es una demostración: en el sitio real esta solicitud llegaría directo a la panadería con tu teléfono.'}}
+  };
+  var lang='en';
+  function status(){var L=T[lang];k.classList.remove('open');if(open){k.classList.add('open');ks.textContent=L.open}else if(openDay&&m<360){ks.textContent=L.soon}else if(d===2||(d>=3&&d<=6&&m>=1200)){ks.textContent=L.later}else ks.textContent=L.shut;}
+  function apply(l){lang=l;document.documentElement.lang=l==='es'?'es':'en-US';document.querySelectorAll('[data-t]').forEach(function(el){var v=T[l][el.getAttribute('data-t')];if(typeof v==='string')el.innerHTML=v;});document.querySelectorAll('.lang button').forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-l')===l)});status();}
+  document.querySelectorAll('.lang button').forEach(function(b){b.addEventListener('click',function(){apply(b.getAttribute('data-l'))})});
+  status();
+  var f=document.getElementById('cform'),done=document.getElementById('done'),dd=document.getElementById('d');dd.min=new Date().toISOString().slice(0,10);
+  f.addEventListener('submit',function(e){e.preventDefault();var n=document.getElementById('n').value.trim()||(lang==='es'?'amigo':'there');done.textContent=T[lang].done(n);done.classList.add('show');});
+})();
+</script>
+</body>
+</html>
