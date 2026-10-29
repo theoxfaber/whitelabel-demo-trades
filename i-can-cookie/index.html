@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>I Can Cookie Home Bakery · Lebanon, KY · Free concept</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--cocoa:#2a1912;--cocoa2:#3b2419;--dough:#f1d9b5;--butter:#ffd166;--berry:#e8466f;--ink:#1d120d;--paper:#fbf4ea;
+--fs-hero:clamp(3.1rem,11vw,9.5rem);--fs-h2:clamp(2rem,5.2vw,3.6rem);--ease:cubic-bezier(.22,1,.36,1)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font:500 17px/1.6 Figtree,system-ui,sans-serif;color:var(--ink);background:var(--paper);overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--berry);outline-offset:3px}
+.ribbon{background:var(--ink);color:var(--dough);font-size:.8rem;text-align:center;padding:.45rem 1rem;letter-spacing:.02em}
+.wrap{width:min(1180px,100% - 2.5rem);margin-inline:auto}
+h1,h2,h3{font-family:"Bricolage Grotesque",sans-serif;line-height:.95;letter-spacing:-.02em}
+/* HERO */
+.hero{background:var(--cocoa);color:var(--paper);position:relative;overflow:hidden;padding:clamp(2.2rem,6vw,5rem) 0 clamp(3rem,8vw,6rem)}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(1.5rem,4vw,4rem);align-items:center}
+.brand{font-weight:700;font-size:.95rem;letter-spacing:.04em;color:var(--butter);margin-bottom:1rem}
+.hero h1{font-size:var(--fs-hero);font-weight:800}
+.hero h1 span{display:block;color:var(--butter)}
+.hero p.lede{font-size:clamp(1.05rem,2vw,1.3rem);max-width:34ch;margin:1.3rem 0 1.8rem;color:var(--dough)}
+.cta{display:flex;flex-wrap:wrap;gap:.8rem}
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-weight:700;text-decoration:none;padding:.95rem 1.4rem;border-radius:10px;border:2px solid transparent;cursor:pointer;font-size:1rem;font-family:inherit}
+.btn.main{background:var(--berry);color:#fff}
+.btn.main:hover{background:#d13560}
+.btn.ghost{border-color:var(--dough);color:var(--dough);background:transparent}
+.tray{position:relative;aspect-ratio:3/4}
+.tray img{position:absolute;border-radius:14px;box-shadow:0 30px 60px -20px #000a;object-fit:cover}
+.tray .a{inset:0 18% 14% 0;transform:rotate(-3deg)}
+.tray .b{width:52%;aspect-ratio:3/4;right:0;bottom:0;transform:rotate(5deg);border:6px solid var(--paper)}
+/* STICKERS – the signature */
+.drop{padding:clamp(3.5rem,8vw,6.5rem) 0;background:var(--paper)}
+.drop-head{display:flex;justify-content:space-between;align-items:end;gap:1.5rem;flex-wrap:wrap;margin-bottom:2.5rem}
+.drop h2{font-size:var(--fs-h2);font-weight:800;max-width:14ch}
+.drop-head p{max-width:36ch;color:#5a463b}
+.sheet{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1.4rem}
+.sticker{aspect-ratio:1;border-radius:50%;display:grid;place-content:center;text-align:center;padding:1.4rem;position:relative;
+transform:rotate(var(--r,0deg)) scale(.6);opacity:0;transition:transform .7s var(--ease),opacity .5s;transition-delay:var(--d,0s)}
+.sticker.in{transform:rotate(var(--r,0deg)) scale(1);opacity:1}
+.sticker::after{content:"";position:absolute;inset:8px;border-radius:50%;border:2px dashed currentColor;opacity:.45}
+.sticker h3{font-size:clamp(1.25rem,2.4vw,1.6rem);font-weight:800;margin-bottom:.4rem}
+.sticker p{font-size:.86rem;line-height:1.35;max-width:17ch;margin-inline:auto}
+.s1{background:var(--butter);color:var(--ink);--r:-6deg}
+.s2{background:var(--berry);color:#fff;--r:4deg;--d:.08s}
+.s3{background:var(--cocoa);color:var(--dough);--r:-2deg;--d:.16s}
+.s4{background:#f28c38;color:var(--ink);--r:7deg;--d:.24s}
+.s5{background:#6b3e2a;color:var(--paper);--r:-5deg;--d:.32s}
+.when{margin-top:2.2rem;font-weight:600;color:#5a463b}
+/* ORDER */
+.order{background:var(--butter);padding:clamp(3.5rem,8vw,6.5rem) 0}
+.order .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4.5rem);align-items:start}
+.order h2{font-size:var(--fs-h2);font-weight:800;margin-bottom:1.2rem}
+.order p{max-width:40ch}
+.terms{margin-top:1.6rem;border-top:2px solid var(--ink)}
+.terms div{display:flex;justify-content:space-between;gap:1rem;padding:.8rem 0;border-bottom:1px solid #1d120d40}
+.terms b{font-family:"Bricolage Grotesque";font-size:1.25rem}
+.small{font-size:.82rem;color:#4a3a2f;margin-top:.8rem}
+form{background:var(--paper);border-radius:16px;padding:clamp(1.3rem,3vw,2rem);box-shadow:0 20px 50px -25px #2a191280}
+label{display:block;font-weight:700;font-size:.9rem;margin:.9rem 0 .35rem}
+input,select,textarea{width:100%;font:inherit;padding:.75rem .85rem;border:2px solid #d9c3a3;border-radius:10px;background:#fff}
+textarea{min-height:88px;resize:vertical}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+form .btn{width:100%;justify-content:center;margin-top:1.2rem}
+.note{display:none;margin-top:1rem;font-weight:600;color:var(--cocoa)}
+/* PHOTOS */
+.pics{background:var(--cocoa);padding:clamp(3rem,7vw,5.5rem) 0;color:var(--dough)}
+.pics h2{font-size:var(--fs-h2);color:var(--paper);margin-bottom:2rem;font-weight:800}
+.strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.strip figure{border-radius:12px;overflow:hidden;aspect-ratio:3/4;position:relative}
+.strip img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.strip figure:hover img{transform:scale(1.05)}
+.strip figcaption{position:absolute;left:.7rem;bottom:.7rem;background:var(--paper);color:var(--ink);font-size:.8rem;font-weight:700;padding:.3rem .6rem;border-radius:6px}
+/* FIND */
+.find{padding:clamp(3.5rem,8vw,6rem) 0}
+.find .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center}
+.find h2{font-size:var(--fs-h2);font-weight:800;margin-bottom:1rem}
+.card{border:2px solid var(--ink);border-radius:16px;padding:1.6rem}
+.card dt{font-weight:700;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:#7a6253;margin-top:1rem}
+.card dt:first-child{margin-top:0}
+.card dd{font-size:1.1rem;font-weight:600}
+footer{background:var(--ink);color:var(--dough);padding:2.5rem 0 6rem;font-size:.9rem}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem}
+.bar{position:fixed;left:0;right:0;bottom:0;display:none;gap:.6rem;padding:.7rem;background:var(--cocoa);z-index:5}
+.bar a{flex:1;justify-content:center}
+@media (max-width:860px){
+ .hero .wrap,.order .wrap,.find .wrap{grid-template-columns:1fr}
+ .tray{max-width:420px;width:88%;margin:0 auto}
+ .strip{grid-template-columns:repeat(2,1fr)}
+ .bar{display:flex}
+ .hero .cta{display:none}
+}
+@media (max-width:480px){.sheet{grid-template-columns:1fr;justify-items:center}.sticker{width:min(250px,100%)}.row2{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto}.sticker{opacity:1;transform:rotate(var(--r))}}
+</style>
+</head>
+<body>
+<div class="ribbon">Free concept for I Can Cookie Home Bakery · unofficial demo, not affiliated · forms do not send</div>
+
+<header class="hero">
+ <div class="wrap">
+  <div>
+   <div class="brand">🍪 I CAN COOKIE HOME BAKERY · LEBANON, KY</div>
+   <h1>Small batch. <span>Big flavor.</span></h1>
+   <p class="lede">Stuffed, classic and always irresistible cookies, made with love in a Lebanon home kitchen. You CAN have just one more.</p>
+   <div class="cta">
+    <a class="btn main" href="#order">Order a dozen</a>
+    <a class="btn ghost" href="#drop">This week's flavors</a>
+   </div>
+  </div>
+  <div class="tray" aria-hidden="true">
+   <img class="a" src="img/german-chocolate.jpg" alt="">
+   <img class="b" src="img/blackberry.jpg" alt="">
+  </div>
+ </div>
+</header>
+
+<section class="drop" id="drop">
+ <div class="wrap">
+  <div class="drop-head">
+   <h2>The last Saturday cookie drop of the season</h2>
+   <p>Five flavors for Customer Appreciation Day at the Lebanon Farmers Market, Saturday, October 31.</p>
+  </div>
+  <div class="sheet">
+   <div class="sticker s1"><h3>Campfire Classic</h3><p>All the campfire goodness without the campfire</p></div>
+   <div class="sticker s2"><h3>Going Bananas</h3><p>Banana pudding cheesecake inspired</p></div>
+   <div class="sticker s3"><h3>Twisted Caramel</h3><p>Twix-inspired, caramel-chocolate chips and candy pieces</p></div>
+   <div class="sticker s4"><h3>Pumpkin Patch</h3><p>A little fall flavor with chocolatey goodness</p></div>
+   <div class="sticker s5"><h3>Midnight Truffle</h3><p>Chocolate fudge cookie stuffed with a Lindor truffle</p></div>
+  </div>
+  <p class="when">Saturday · 8:00 AM to 12:30 PM · Lebanon Farmers Market</p>
+ </div>
+</section>
+
+<section class="order" id="order">
+ <div class="wrap">
+  <div>
+   <h2>Market's done. The cookies aren't.</h2>
+   <p>Birthdays, office trays, showers and holiday boxes: order by the dozen and pick your flavors.</p>
+   <div class="terms">
+    <div><span>One dozen, up to 3 flavors</span><b>$38</b></div>
+    <div><span>Each extra flavor</span><b>+$5</b></div>
+    <div><span>Individually heat-sealed wrap</span><b>+$0.50</b></div>
+    <div><span>Deposit to book your date</span><b>50%</b></div>
+   </div>
+   <p class="small">Pricing from the bakery's online and catering menu. Deposit is non-refundable; final payment before pickup or delivery.</p>
+  </div>
+  <form onsubmit="event.preventDefault();this.querySelector('.note').style.display='block'">
+   <div class="row2">
+    <div><label for="n">Your name</label><input id="n" autocomplete="name"></div>
+    <div><label for="p">Phone</label><input id="p" type="tel" autocomplete="tel"></div>
+   </div>
+   <div class="row2">
+    <div><label for="q">Dozens</label><select id="q"><option>1</option><option>2</option><option>3</option><option>4+</option></select></div>
+    <div><label for="d">Date needed</label><input id="d" type="date"></div>
+   </div>
+   <label for="f">Flavors you'd love</label>
+   <textarea id="f" placeholder="e.g. Midnight Truffle, Going Bananas, Twisted Caramel"></textarea>
+   <button class="btn main" type="submit">Request my dozen</button>
+   <p class="note">Demo only: in the real site this goes straight to your inbox.</p>
+  </form>
+ </div>
+</section>
+
+<section class="pics">
+ <div class="wrap">
+  <h2>Fresh off the tray</h2>
+  <div class="strip">
+   <figure><img src="img/german-chocolate.jpg" alt="German chocolate fudge cookies drizzled with chocolate" loading="lazy"><figcaption>German chocolate</figcaption></figure>
+   <figure><img src="img/blackberry.jpg" alt="Blackberry jam stuffed cookies on parchment" loading="lazy"><figcaption>Blackberry stuffed</figcaption></figure>
+   <figure><img src="img/cinnamon-roll.jpg" alt="Iced cinnamon roll cookies on trays" loading="lazy"><figcaption>Cinnamon roll</figcaption></figure>
+   <figure><img src="img/cinnamon-roll-2.jpg" alt="Cinnamon roll cookies with white icing swirls" loading="lazy"><figcaption>Iced swirls</figcaption></figure>
+  </div>
+ </div>
+</section>
+
+<section class="find" id="find">
+ <div class="wrap">
+  <div>
+   <h2>Where to find us</h2>
+   <p>Every Saturday of the market season, the cookie drop sets up at the Lebanon Farmers Market. Off season, order ahead by the dozen.</p>
+  </div>
+  <dl class="card">
+   <dt>Market</dt><dd>Lebanon Farmers Market, 230 W M L King Ave, Lebanon, KY</dd>
+   <dt>Saturdays</dt><dd>8:00 AM to 12:30 PM (May to October)</dd>
+   <dt>Orders</dt><dd><a href="mailto:serinacorneliodoty@gmail.com">serinacorneliodoty@gmail.com</a></dd>
+   <dt>Follow</dt><dd><a href="https://www.facebook.com/people/I-Can-Cookie-Home-Bakery/61573633767795/">Facebook</a> · <a href="https://www.instagram.com/icancookiebakery/">Instagram</a></dd>
+  </dl>
+ </div>
+</section>
+
+<footer>
+ <div class="wrap">
+  <span>I Can Cookie Home Bakery · Lebanon, Kentucky</span>
+  <span>Free concept for I Can Cookie Home Bakery, made by Shanmukh Kiran Sagar. Unofficial, not live.</span>
+ </div>
+</footer>
+<nav class="bar"><a class="btn main" href="#order">Order a dozen</a><a class="btn ghost" href="#drop">Flavors</a></nav>
+<script>
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.3});
+document.querySelectorAll('.sticker').forEach(s=>io.observe(s));
+</script>
+</body>
+</html>
